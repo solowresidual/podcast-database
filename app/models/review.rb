@@ -1,3 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :user, :episode
+  belongs_to :user
+  belongs_to :episode
 end
