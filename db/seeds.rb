@@ -78,7 +78,3 @@ puts "Created #{Episode.count} Episodes"
 puts "Created #{Review.count} Reviews"
 puts "Created #{Favorite.count} Favorites"
 
-
-
-
-
