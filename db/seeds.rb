@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Starting seed file...'
+
+  user = User.create(
+    email: Faker::Internet.email,
+    password: '123456'
+  )
+
+podcast = Podcast.create(
+    name: Faker::Music.album,
+    description: "This is a placeholder",
+    category: Faker::Music.genre
+  )
+
+episode = Episode.create!(
+    name: Faker::Music::Prince.song,
+    description: "This is a placeholder",
+    podcast: podcast
+  )
