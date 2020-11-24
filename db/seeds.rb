@@ -14,14 +14,37 @@ puts 'Starting seed file...'
     password: '123456'
   )
 
-podcast = Podcast.create(
+  podcast = Podcast.create(
     name: Faker::Music.album,
     description: "This is a placeholder",
     category: Faker::Music.genre
   )
 
-episode = Episode.create!(
+  episode = Episode.create!(
     name: Faker::Music::Prince.song,
     description: "This is a placeholder",
     podcast: podcast
   )
+
+  review = Review.create(
+    content: Faker::Restaurant.review,
+    rating: rand(1..5),
+    tag: Faker::Music.genre,
+    user: user,
+    episode: episode
+  )
+
+  favorite = Favorite.create(
+    user: user,
+    episode: episode,
+    finished: [false, true].sample
+  )
+
+
+
+
+
+
+
+
+
