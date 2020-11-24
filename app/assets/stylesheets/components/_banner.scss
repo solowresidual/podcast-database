@@ -3,28 +3,30 @@
   max-width: 100vw;
   display: flex;
   align-items: center;
-  // background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-image.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-image.jpg");
   background-size: cover;
 }
 
 .banner-content {
-  // background-color:
+  background-color: white;
   width: 33%;
-  // opacity: 0.2;
-  height: 100%;
-  text-align: center;
+  opacity: 0.2;
+  height: 50%;
+  padding-top: 100px;
+  margin-top: 24px;
 }
 
 .green {
   background-color: green;
+  opacity: 1;
 }
 
 .blue {
-  background-color: blue;
+  // background-color: blue;
 }
 
 .red {
-  background-color: red;
+  // background-color: red;
 }
 
 .purple {
