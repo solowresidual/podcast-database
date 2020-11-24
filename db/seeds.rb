@@ -39,12 +39,3 @@ puts 'Starting seed file...'
     episode: episode,
     finished: [false, true].sample
   )
-
-
-
-
-
-
-
-
-
