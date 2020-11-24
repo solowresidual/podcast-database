@@ -1,12 +1,20 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar <%= yield(:navbar_class) %>">
+
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
+    <! -- Search Form -->
+  <form action="search" class="navbar-search">
+  <input type="text" class="navbar-search-input" placeholder="Search something">
+  <button type="submit" class="navbar-search-btn">
+    <i class="fa fa-search"></i>
+  </button>
+  </form>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">

@@ -2,9 +2,31 @@
   height: 100vh;
   max-width: 100vw;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-image.jpg");
+  // background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("background-image.jpg");
   background-size: cover;
 }
 
+.banner-content {
+  // background-color:
+  width: 33%;
+  // opacity: 0.2;
+  height: 100%;
+  text-align: center;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.purple {
+  background-color: purple;
+}
