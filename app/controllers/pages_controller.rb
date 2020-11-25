@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   layout "home"
 
   def home
+    @episodes = Episode.first(6)
   end
 end
