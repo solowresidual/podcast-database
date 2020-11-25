@@ -10,9 +10,9 @@
 
 
 
-<%= link_to "Back to Home", root_path, class: "btn btn-success"  %>
+<%= link_to "Back to Home", root_path, class: "btn btn-danger"  %>
 
 <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
 
-
+<%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, class: "btn btn-success" %>
 
