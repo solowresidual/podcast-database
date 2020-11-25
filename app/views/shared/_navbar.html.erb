@@ -15,14 +15,8 @@
     <i class="fa fa-search"></i>
   </button>
 </form> -->
-<%= form_tag podcasts_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a episode"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+
+<%= render 'shared/search_form' %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
