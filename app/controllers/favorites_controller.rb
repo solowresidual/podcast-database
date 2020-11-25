@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
     @favorite.episode = @episode
 
     if @favorite.save
-      redirect_to epside_path(@episode)
+      redirect_to episode_path(@episode)
     else
       render 'episodes/show'
     end

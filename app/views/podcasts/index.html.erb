@@ -2,6 +2,6 @@
   <p>Sorry we could not find your result</p>
 <% else %>
   <% @podcasts.each do |podcast| %>
-    <li><%= podcast.name %></li>
+    <li><%= link_to podcast.name, podcast  %></li>
   <% end %>
 <% end %>

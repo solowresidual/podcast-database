@@ -1,9 +1,4 @@
 class PodcastsController < ApplicationController
-  skip_before_action :authenticate_user! , only: :index
-  def show
-    @podcast = Podcast.find(params[:id])
-    @episodes = @podcast.episodes
-  end
 
   def index
     if params[ :query ]
@@ -11,5 +6,10 @@ class PodcastsController < ApplicationController
     else
       @podcasts = Podcast.all
     end
+  end
+
+  def show
+    @podcast = Podcast.find(params[:id])
+    @episodes = @podcast.episodes
   end
 end

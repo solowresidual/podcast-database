@@ -38,3 +38,14 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.card-heading a {
+  text-decoration: none;
+  color: $gray;
+}
+
+.card-heading a:hover {
+  color: $light-gray;
+}
+
+
