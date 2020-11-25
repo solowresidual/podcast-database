@@ -16,3 +16,6 @@
 
 <%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, class: "btn btn-success" %>
 
+
+<button class="favorites btn btn-warning">Add to Favorites</button>
+<%= link_to "", episode_favorites_path(@episode), method: :post, id: "magic", class: "hidden" %>
