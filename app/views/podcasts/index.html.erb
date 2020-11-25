@@ -1,7 +1,7 @@
-<div>
-  <ul>
-    <% @podcasts.each do |podcast|  %>
-    <li><%= link_to podcast.name, podcast  %> </li>
-    <% end  %>
-  </ul>
-</div>
+<% if @podcasts.empty? %>
+  <p>Sorry we could not find your result</p>
+<% else %>
+  <% @podcasts.each do |podcast| %>
+    <li><%= link_to podcast.name, podcast  %></li>
+  <% end %>
+<% end %>

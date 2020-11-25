@@ -1,13 +1,13 @@
-<% content_for(:navbar_class, "navbar-home") %>
+<! -- Main Home Banner -->
 
-<div class="banner blue">
+<div class="banner">
   <div class="container">
-    <div class="banner-content red">
-      <div class="green">
+    <div class="banner-content">
+      <div>
         <h1>The World's <br> Podcast <br> Database</h1>
       </div>
-      <div class="purple">
-        <p>Search bar</p>
+      <div class="search-bar-home">
+      <%= render 'shared/search_form' %>
         <p></p>
       </div>
     </div>
