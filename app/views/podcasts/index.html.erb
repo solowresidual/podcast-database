@@ -1,0 +1,7 @@
+<% if @podcasts.empty? %>
+  <p>Sorry we could not find your result</p>
+<% else %>
+  <% @podcasts.each do |podcast| %>
+    <li><%= podcast.name %></li>
+  <% end %>
+<% end %>
