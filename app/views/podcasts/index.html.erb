@@ -1,0 +1,7 @@
+<div>
+  <ul>
+    <% @podcasts.each do |podcast|  %>
+    <li><%= link_to podcast.name, podcast  %> </li>
+    <% end  %>
+  </ul>
+</div>
