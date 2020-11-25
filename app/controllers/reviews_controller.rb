@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  def index
+    @reviews = Review.where(user: current_user)
+  end
+
   def create
     @user = current_user
     @review = Review.new(review_params)
