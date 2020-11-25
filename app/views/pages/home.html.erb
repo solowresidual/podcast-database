@@ -25,17 +25,20 @@
 
 <! -- Episodes Tiles -->
 
-<div class="container yellow">
+<div class="container">
   <div class="cards">
     <% @episodes.each do |episode| %>
-      <div class="card bg-success">
-        <h4>Episode Name</h4>
-        <p>Rating</p>
-        <p>Episode description</p>
-        <p>Episode category</p>
+      <div class="card p-3">
+        <div class="card-heading">
+          <h4><%= link_to episode.name , episode %></h4>
+          <span><%= episode.average_rating %></span>
+        </div>
+        <div class="card-home-body">
+          <p><%= episode.description %></p>
+          <p><%= episode.podcast.category %></p>
+        </div>
         <img src="" alt="">
         <button>Add to Wishlist</button>
-        <button>Write a Review</button>
       </div>
     <% end %>
    </div>
