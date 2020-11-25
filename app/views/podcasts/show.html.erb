@@ -1,0 +1,7 @@
+<%= @podcast.name %>
+
+<ul>
+  <% @episodes.each do |episode| %>
+  <li><%= link_to episode.name, episode %></li>
+  <% end %>
+</ul>
