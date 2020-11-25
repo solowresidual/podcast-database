@@ -1,5 +1,6 @@
 <h5><%= @episode.name %></h5>
 <p><%= @episode.description %></p>
+<p>Average rating: <%= '⭐️' * @episode.average_rating if @episode.average_rating.present? %></p>
 
 <ul>
 <% @reviews.each do |review| %>

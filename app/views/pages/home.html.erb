@@ -31,7 +31,7 @@
       <div class="card p-3">
         <div class="card-heading">
           <h4><%= link_to episode.name , episode %></h4>
-          <span><%= episode.average_rating %></span>
+          <span><%= '⭐️' * episode.average_rating if episode.average_rating.present? %></span>
         </div>
         <div class="card-home-body">
           <p><%= episode.description %></p>
