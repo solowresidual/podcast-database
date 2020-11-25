@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <% @favorites.each do |favorite|  %>
+    <li><%= link_to favorite.episode.name, episode_path(favorite.episode)  %> </li>
+    <% end  %>
+  </ul>
+</div>
+
+
+<!-- delete button for fav -->

@@ -13,4 +13,9 @@ class FavoritesController < ApplicationController
       render 'episodes/show'
     end
   end
+
+  def index
+    @favorites = Favorite.where(user: current_user)
+  end
+
 end
