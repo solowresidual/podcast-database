@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
     @user = current_user
     @review = Review.new(review_params)
     @episode = Episode.find(params[:episode_id])
-
     @review.user = @user
     @review.episode = @episode
 

@@ -1,5 +1,45 @@
-<div class="banner">
-  <div class="banner-content">
-    <h1>The Podcast Database -- Launching 4 December 2020</h1>
+<% content_for(:navbar_class, "navbar-home") %>
+
+<div class="banner blue">
+  <div class="container">
+    <div class="banner-content red">
+      <div class="green">
+        <h1>The World's <br> Podcast <br> Database</h1>
+      </div>
+      <div class="purple">
+        <p>Search bar</p>
+        <p></p>
+      </div>
+    </div>
   </div>
 </div>
+
+<! -- Episode Recommendations Title -->
+
+<div class="container grey mt-5">
+  <h1>Our Selected Favorites</h1>
+  <img src="" alt="">
+  <img src="" alt="">
+</div>
+
+
+<! -- Episodes Tiles -->
+
+<div class="container yellow">
+  <div class="cards">
+    <% @episodes.each do |episode| %>
+      <div class="card bg-success">
+        <h4>Episode Name</h4>
+        <p>Rating</p>
+        <p>Episode description</p>
+        <p>Episode category</p>
+        <img src="" alt="">
+        <button>Add to Wishlist</button>
+        <button>Write a Review</button>
+      </div>
+    <% end %>
+   </div>
+</div>
+
+
+<! -- Footer -->
