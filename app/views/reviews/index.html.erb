@@ -3,4 +3,6 @@
   <p><%= review.rating %></p>
   <p><%= review.episode.name %></p>
   <p><%= review.episode.podcast.name %></p>
+  <%= link_to 'Edit Review', edit_review_path(review.episode, review), class: "btn sign-up"  %>
+
 <% end %>
