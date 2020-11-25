@@ -1,5 +1,6 @@
 class EpisodesController < ApplicationController
   before_action :set_episode, only: [:show]
+  skip_before_action :authenticate_user!, only: [ :show ]
 
   def show
     @reviews = @episode.reviews
