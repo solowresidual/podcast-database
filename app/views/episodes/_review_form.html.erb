@@ -1,0 +1,5 @@
+<%= simple_form_for [episode, review] do |f| %>
+  <%= f.input :content, placeholder: "Leave your review here", label: false %>
+  <%= f.input :rating, label: false %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
