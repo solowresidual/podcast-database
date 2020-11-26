@@ -13,13 +13,17 @@
 
 <%= link_to "Back to Home", root_path, class: "btn btn-danger"  %>
 
+<% if user_signed_in? %>
 <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
 
 
-<% if current_user.favorites.where(episode: @episode).empty? %>
-  <button class="favorites btn btn-warning">Add to Favorites</button>
-  <%= link_to "", episode_favorites_path(@episode), method: :post, id: "magic", class: "hidden" %>
-  <% else %>
-  <button class="favorites btn btn-dark">Remove from Favorites</button>
-<% end %>
+  <% if current_user.favorites.where(episode: @episode).empty? %>
+    <button class="favorites btn btn-warning">Add to Favorites</button>
+    <%= link_to "", episode_favorites_path(@episode), method: :post, remote: true, id: "magic", class: "hidden" %>
+    <% else %>
+    <%= link_to "Remove from Favorites", favorite_path(@favorite), method: :delete, remote: true, class: "favorites btn btn-dark" %>
+  <% end %>
 
+<% else %>
+<p>Sign in to add your review.</p>
+<% end %>
