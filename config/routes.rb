@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   resources :podcasts, only: [:index, :show ]
 
   resources :episodes, only: [:show] do
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:create, :edit, :update ]
     resources :favorites, only: [:create]
   end
   get 'recommended', to: 'episodes#recommended'
 
-  resources :reviews, only: [:index, :edit, :update, :destroy]
+  resources :reviews, only: [:index, :destroy]
 
   resources :favorites, only: [:index, :update, :destroy]
 end
