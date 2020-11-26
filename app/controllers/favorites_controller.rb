@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
-
   def index
-    @favorites = Favorite.where(user: current_user)
+    @favorites = Favorite.where(user: current_user, finished: false)
+    @finished = Favorite.where(user: current_user, finished: true)
   end
 
   def create
