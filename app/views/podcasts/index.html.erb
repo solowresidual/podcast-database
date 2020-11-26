@@ -1,7 +1,19 @@
-<% if @podcasts.empty? %>
-  <p>Sorry we could not find your result</p>
-<% else %>
-  <% @podcasts.each do |podcast| %>
-    <li><%= link_to podcast.name, podcast  %></li>
-  <% end %>
-<% end %>
+<h2 class="text-center">Podcasts</h2>
+<div class="podcast-cards">
+    <% if @podcasts.empty? %>
+      <p>Sorry we could not find your result</p>
+    <% else %>
+      <% @podcasts.each do |podcast| %>
+        <div class="card-product">
+          <%#= image_tag(podcast.image) %>
+          <img src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg" alt="">
+          <div class="podcast-text">
+            <h5><%= link_to podcast.name, podcast %></h5>
+            <p> <%= podcast.description %> </p>
+            <p> <small> <%= podcast.category %></small> </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+</div>
+
