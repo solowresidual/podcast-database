@@ -28,7 +28,16 @@
       <img src="https://thumborcdn.acast.com/Z0w7A2u_VMQjzqjDUK2PZ4GvF_c=/3000x3000/https://mediacdn.acast.com/assets/c4214613-72b9-49c3-881d-1893d307113b/cover-image-kgigv01u-high_low.jpg" class="episode-show-image" alt="">
 
       <div class="episode-info m-4">
-        <%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, class: "btn btn-success" %>
+        <% if user_signed_in? %>
+            <% if current_user.favorites.where(episode: @episode).empty? %>
+
+              <button class="favorites btn btn-warning">Add to Favorites</button>
+              <%= link_to "", episode_favorites_path(@episode), method: :post, remote: true, id: "magic", class: "hidden" %>
+              <% else %>
+              <%= link_to "Remove from Favorites", favorite_path(@favorite), method: :delete, remote: true, class: "favorites btn btn-dark" %>
+
+            <% end %>
+        <% end %>
         <h5 class="mt-3">Episode Categories:</h5>
         <p>Fitness, Media, Politics etc etc...</p>
       </div>
@@ -36,7 +45,6 @@
     </div>
   </div>
 </div>
-
 
   <div class="reviews-container">
       <h5 class="reviews-heading">Community Reviews:</h5>
@@ -46,8 +54,11 @@
         <li><%= '⭐️' * review.rating %></li>
       <% end %>
       </ul>
+      <% if user_signed_in? %>
 
-      <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
+        <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
+
+      <% end %>
 
       <%= link_to "Back to Home", root_path, class: "btn btn-danger mt-4"  %>
     </div>

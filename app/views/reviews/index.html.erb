@@ -3,4 +3,8 @@
   <p><%= review.rating %></p>
   <p><%= review.episode.name %></p>
   <p><%= review.episode.podcast.name %></p>
+  <%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %>
+  <%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+
+
 <% end %>
