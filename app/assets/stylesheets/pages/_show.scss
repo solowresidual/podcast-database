@@ -1,0 +1,45 @@
+.ep-show-container {
+  margin: 50px;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 75%;
+}
+
+.right {
+  width: 25%;
+}
+
+.episode-show-image {
+  width: 320px;
+  height: 360px;
+}
+
+.episode-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ep-description {
+  width: 94%;
+}
+
+.ep-icons-container {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.reviews-container {
+  margin: 30px;
+}
+
+
+.reviews-heading {
+  border-bottom: 2px solid grey;
+}

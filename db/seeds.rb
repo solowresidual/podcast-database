@@ -44,7 +44,10 @@ puts 'Starting seed file...'
 
   episode = Episode.create!(
     name: Faker::Music::Prince.song,
-    description: "This is a placeholder",
+    description: "Lorem ipsum dolor sit amet, vidit graecis disputationi ei ius, ea voluptaria sadipscing eloquentiam vim. Cu his eros insolens. Eu eripuit singulis scriptorem eos. Ea nonumes iudicabit pri, wisi tempor recusabo ex vis, habeo nostrud eam cu. Vix ponderum pertinax complectitur ne, dolor scribentur id ius, ut mel fugit consetetur.
+
+Eos et simul assentior. Gubergren euripidis est ad. At dissentias sadipscing signiferumque mel. Impetus mentitum facilisi ius et, no sumo summo mollis mea. Pri augue omnes ut, sit accusam persequeris ex, no postulant partiendo sit. Facete iuvaret adipisci sit id, eos eu agam iudicabit philosophia. Ei eum volumus adversarium.
+",
     podcast: podcast
   )
 
