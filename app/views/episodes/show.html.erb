@@ -14,8 +14,11 @@
 
 <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
 
-<%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, class: "btn btn-success" %>
 
+<% if current_user.favorites.where(episode: @episode).empty? %>
+  <button class="favorites btn btn-warning">Add to Favorites</button>
+  <%= link_to "", episode_favorites_path(@episode), method: :post, id: "magic", class: "hidden" %>
+  <% else %>
+  <button class="favorites btn btn-dark">Remove from Favorites</button>
+<% end %>
 
-<button class="favorites btn btn-warning">Add to Favorites</button>
-<%= link_to "", episode_favorites_path(@episode), method: :post, id: "magic", class: "hidden" %>
