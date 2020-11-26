@@ -17,7 +17,7 @@
 <! -- Episode Recommendations Title -->
 
 <div class="container grey mt-5">
-  <h1>Our Selected Favorites</h1>
+  <h1>Our Favorites</h1>
   <img src="" alt="">
   <img src="" alt="">
 </div>
@@ -27,7 +27,7 @@
 
 <div class="container">
   <div class="cards">
-    <% @episodes.each do |episode| %>
+    <% @popular_episodes.each do |episode| %>
       <div class="card p-3">
         <div class="card-heading">
           <h4><%= link_to episode.name , episode %></h4>
