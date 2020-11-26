@@ -39,6 +39,13 @@
   }
 }
 
+.podcast-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 36px 0px;
+}
+
 .card-heading a {
   text-decoration: none;
   color: $gray;
@@ -47,5 +54,29 @@
 .card-heading a:hover {
   color: $light-gray;
 }
+
+.card-product {
+  display: flex;
+  border-radius: 10px;
+  width: 600px;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #E6E6E6;
+  margin: 16px;
+  img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+}
+
+.podcast-text {
+  padding: 8px;
+  p {
+    margin-bottom: 0;
+  }
+
+}
+
 
 
