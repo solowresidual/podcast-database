@@ -6,6 +6,7 @@ class EpisodesController < ApplicationController
     @reviews = @episode.reviews
     @review = Review.new
     @favorite = Favorite.find_by(episode: @episode)
+    @previous_review = Review.find_by(user: current_user, episode: @episode)
   end
 
   private
