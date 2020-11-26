@@ -1,10 +1,16 @@
 <div>
   <ul>
     <% @favorites.each do |favorite|  %>
-    <li><%= link_to favorite.episode.name, episode_path(favorite.episode)  %> </li>
-    <% end  %>
+    <li><%= link_to favorite.episode.name, episode_path(favorite.episode) %>
+      <%= link_to "unfavorite",
+            favorite_path(favorite),
+            method: :delete %>
+      <%= link_to favorite.finished? ? "unlistened" : "listened",
+            favorite_path(favorite),
+            method: :patch %>
+      <% end  %>
+     </li>
   </ul>
 </div>
 
 
-<!-- delete button for fav -->
