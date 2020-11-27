@@ -1,3 +1,9 @@
+<!-- Meta Information -->
+<% content_for :meta_title, "#{@episode.name} | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @episode.description %>
+<% content_for :meta_image, cl_image_path(@episode.podcast.photo.path) %>
+<!-- Meta Information -->
+
 <div class="ep-show-container">
   <div class="row">
     <div class="column left">
