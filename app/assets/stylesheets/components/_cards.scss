@@ -46,6 +46,14 @@
   margin: 36px 0px;
 }
 
+.pod-name {
+  color: $dark-purple;
+  &:hover {
+    text-decoration: none;
+    color: $light-purple;
+  }
+}
+
 .card-heading a {
   text-decoration: none;
   color: $gray;

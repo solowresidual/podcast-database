@@ -37,7 +37,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
     initSweetalert('.favorites', {
     title: "Added to Favorites!",
-    text: "Great",
     icon: "success"
   }, (value) => {
     console.log(value);

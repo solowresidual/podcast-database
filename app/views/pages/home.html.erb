@@ -24,16 +24,22 @@
     <div class="episodes-container">
       <div class="podcast">
         <div class="podcast-preview">
-          <h4><%= episode.podcast.name %></h4>
+          <h5><%= episode.podcast.name%></h5>
           <p><%= episode.podcast.category %></p>
           <%= link_to "All Episodes", podcast_path(episode.podcast) %>
           <a href="#"><i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="episode-info">
           <span><%= '⭐️' * episode.average_rating if episode.average_rating.present? %></span>
-          <h3><%= link_to episode.name , episode, class: "ep-name-link" %></h3>
-          <p><%= episode.description.truncate(250)%></p>
-          <button class="add-to-fave">Add to Favorites</button>
+          <h5><%= link_to episode.name.truncate(105) , episode, class: "ep-name-link" %></h5>
+          <p><%= episode.description.truncate(200)%></p>
+
+          <% if user_signed_in? %>
+            <% if current_user.favorites.where(episode: episode).empty? %>
+            <button class="add-to-fave favorites">Add to Favorites</button>
+            <%= link_to "", episode_favorites_path(episode), method: :post, remote: true, id: "magic", class: "hidden" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
