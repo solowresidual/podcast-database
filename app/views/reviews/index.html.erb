@@ -1,10 +1,20 @@
-<% @reviews.each do |review| %>
-  <p><%= review.content %></p>
-  <p><%= review.rating %></p>
-  <p><%= review.episode.name %></p>
-  <p><%= review.episode.podcast.name %></p>
-  <%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %>
-  <%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+<h2 class="text-center">My Reviews</h2>
+<div class="podcast-cards">
+    <% @reviews.each do |review| %>
+    <div class="card-my-reviews">
+      <div class="review-card-top">
+      <p><span>Episode: </span><%= review.episode.name %></p>
+      <p><span>Podcast: </span><%= review.episode.podcast.name %></p>
+      <p><span>Rating: </span><%= review.rating %></p>
+      </div>
+      <div>
+      <p><%= review.content %></p>
+      </div>
+      <div class="card-my-reviews-buttons">
+      <%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %>
+      <%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+      </div>
+    </div>
 
-
-<% end %>
+    <% end %>
+</div>

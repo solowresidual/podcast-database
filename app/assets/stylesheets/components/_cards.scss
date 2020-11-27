@@ -78,5 +78,25 @@
 
 }
 
+.card-my-reviews {
+  border-radius: 10px;
+  width: 600px;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #E6E6E6;
+  margin: 16px;
+  padding: 8px;
+}
+
+.card-my-reviews-buttons {
+  justify-content: space-between;
+  display: flex;
+}
+
+.review-card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 
