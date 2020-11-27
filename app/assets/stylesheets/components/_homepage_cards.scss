@@ -1,0 +1,77 @@
+.podcast {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  // margin: 20px 10px;
+  overflow: hidden;
+  // width: 600px;
+  height: 320px;
+}
+
+.podcast h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.podcast h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.podcast-preview {
+  background-color: #2A265F;
+  color: #fff;
+  padding: 30px;
+  max-width: 200px;
+}
+
+.podcast-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.episode-info {
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+
+
+.add-to-fave {
+  background-color: #2A265F;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  letter-spacing: 1px;
+}
+
+
+.popular-cards-container {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.ep-name-link {
+  color: #2A265F;
+
+  &:hover {
+    text-decoration: none;
+    color: grey;
+  }
+}

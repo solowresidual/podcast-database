@@ -1,5 +1,5 @@
 .footer {
-  background: #1EDD88;
+  background: #fff;
   opacity: 0.8;
   display: flex;
   align-items: center;
@@ -8,6 +8,7 @@
   padding: 20px 50px;
   color: rgba(0,0,0,0.3);
   width: 100%;
+  border-top: 1px solid #5CBFA6;
 }
 
 .footer-links {
@@ -16,7 +17,7 @@
   // color: #fff;
 }
 .footer-links a {
-  color: #fff;
+  color: #5CBFA6;
   opacity: 0.85;
   text-decoration: none;
   font-size: 24px;
@@ -28,7 +29,7 @@
 }
 
 .footer-copyright {
-  color: #fff;
+  color: #5CBFA6;
   opacity: 0.85;
   letter-spacing: 2px;
 }

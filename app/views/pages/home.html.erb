@@ -1,46 +1,44 @@
+
 <! -- Main Home Banner -->
 
 <div class="banner">
   <div class="container">
     <div class="banner-content">
-      <div>
-        <h1>The World's <br> Podcast <br> Database</h1>
-      </div>
-      <div class="search-bar-home">
-      <%= render 'shared/search_form' %>
-        <p></p>
+      <div class="banner-info">
+        <div>
+          <h1 class="main-heading">The World's Largest <br> Podcast Database</h1>
+        </div>
+        <div class="search-bar-home">
+          <%= render 'shared/search_form' %>
+          <p></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<! -- Episode Recommendations Title -->
+<h2 class="text-center m-5">Our Popular Episodes</h2>
 
-<div class="container grey mt-5">
-  <h1>Our Favorites</h1>
-  <img src="" alt="">
-  <img src="" alt="">
-</div>
-
-
-<! -- Episodes Tiles -->
-
-<div class="container">
-  <div class="cards">
-    <% @popular_episodes.each do |episode| %>
-      <div class="card p-3">
-        <div class="card-heading">
-          <h4><%= link_to episode.name , episode %></h4>
-          <span><%= '⭐️' * episode.average_rating if episode.average_rating.present? %></span>
-        </div>
-        <div class="card-home-body">
-          <p><%= episode.description %></p>
+<div class="popular-cards-container">
+  <% @popular_episodes.each do |episode| %>
+    <div class="episodes-container">
+      <div class="podcast">
+        <div class="podcast-preview">
+          <h4><%= episode.podcast.name %></h4>
           <p><%= episode.podcast.category %></p>
+          <%= link_to "All Episodes", podcast_path(episode.podcast) %>
+          <a href="#"><i class="fas fa-chevron-right"></i></a>
         </div>
-        <img src="" alt="">
-        <button>Add to Wishlist</button>
+        <div class="episode-info">
+          <span><%= '⭐️' * episode.average_rating if episode.average_rating.present? %></span>
+          <h3><%= link_to episode.name , episode, class: "ep-name-link" %></h3>
+          <p><%= episode.description.truncate(250)%></p>
+          <button class="add-to-fave">Add to Favorites</button>
+        </div>
       </div>
-    <% end %>
-   </div>
+    </div>
+  <% end %>
 </div>
+
+
 
