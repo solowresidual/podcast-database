@@ -4,9 +4,7 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   max-width: 100%;
-  // margin: 20px 10px;
   overflow: hidden;
-  // width: 600px;
   height: 320px;
 }
 
@@ -23,7 +21,7 @@
 }
 
 .podcast-preview {
-  background-color: #2A265F;
+  background-color: $dark-purple;
   color: #fff;
   padding: 30px;
   max-width: 200px;
@@ -46,7 +44,7 @@
 
 
 .add-to-fave {
-  background-color: #2A265F;
+  background-color: $dark-purple;
   border: 0;
   border-radius: 50px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -68,10 +66,10 @@
 }
 
 .ep-name-link {
-  color: #2A265F;
+  color: $dark-purple;
 
   &:hover {
     text-decoration: none;
-    color: grey;
+    color: $light-purple;
   }
 }
