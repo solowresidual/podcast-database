@@ -1,0 +1,18 @@
+.btn-reviews {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #ea2c62;
+  transition: background 0.3s ease;
+  a {
+    color: white;
+  }
+}
+
+.btn-reviews:hover {
+  background: #ea2c62;
+  opacity: 0.8;
+  a {
+    color: white;
+  }
+}

@@ -5,7 +5,7 @@
     <% else %>
       <% @podcasts.each do |podcast| %>
         <div class="card-product">
-          <img src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg" alt="">
+          <%= cl_image_tag podcast.photo.key, alt: "alttext" %>
           <div class="podcast-text">
             <h5><%= link_to podcast.name, podcast, class: "pod-name" %></h5>
             <p> <%= podcast.description.truncate(120) %> </p>
