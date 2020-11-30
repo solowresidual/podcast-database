@@ -1,5 +1,5 @@
 class Podcast < ApplicationRecord
-  has_many :episodes
+  has_many :episodes, dependent: :destroy
   has_one_attached :photo
 
   include PgSearch::Model
