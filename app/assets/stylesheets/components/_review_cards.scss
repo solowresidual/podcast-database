@@ -1,0 +1,51 @@
+.review-cards-container {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.podcast {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  overflow: hidden;
+  height: 320px;
+}
+
+.podcast h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.podcast h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.podcast-preview {
+  background-color: $dark-purple;
+  color: #fff;
+  padding: 30px;
+  max-width: 200px;
+}
+
+.review-info {
+  padding: 30px;
+  width: 100%;
+  position: relative;
+}
+
+
+.review-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  width: 85%;
+}
+
+
