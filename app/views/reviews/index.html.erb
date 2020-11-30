@@ -1,20 +1,20 @@
-  <h2 class="text-center">My Reviews</h2>
-  <div class="podcast-cards">
-      <% @reviews.each do |review| %>
-      <div class="card-my-reviews">
-        <div class="review-card-top">
-          <p><span>Episode: </span><%= review.episode.name %></p>
-          <p><span>Podcast: </span><%= review.episode.podcast.name %></p>
-          <p><span>Rating: </span><%= review.rating %></p>
+<h2 class="text-center">My Reviews</h2>
+
+<div class="review-cards-container">
+    <% @reviews.each do |review| %>
+      <div class="podcast">
+        <div class="podcast-preview">
+          <h5><%= review.episode.podcast.name %></h5>
         </div>
-        <div>
+        <div class="review-info">
+          <h5><%= review.episode.name %></h5>
+          <span><%= '⭐️' * review.rating if review.rating.present? %></span>
           <p><%= review.content %></p>
-        </div>
-        <div class="card-my-reviews-buttons">
-          <p class="btn-reviews"><%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %></p>
-          <p class="btn-reviews"><%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: "Are you sure?"}  %></p>
+          <div class="review-buttons">
+            <p class="btn-reviews"><%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %></p>
+            <p class="btn-reviews"><%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: "Are you sure?"}  %></p>
+          </div>
         </div>
       </div>
-
-      <% end %>
-  </div>
+    <% end %>
+</div>
