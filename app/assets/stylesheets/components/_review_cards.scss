@@ -1,5 +1,12 @@
+.review-cards-container {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
 .podcast {
-  background-color: orange;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   max-width: 100%;
@@ -29,26 +36,16 @@
 .review-info {
   padding: 30px;
   width: 100%;
+  position: relative;
 }
 
 
-.review-cards-container {
-  margin: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
+.review-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  width: 85%;
 }
 
-.ep-name-link {
-  color: $dark-purple;
-
-  &:hover {
-    text-decoration: none;
-    color: $light-purple;
-  }
-
-  .review-buttons {
-    text-align: center;
-  }
-}
 
