@@ -41,9 +41,15 @@ document.addEventListener('turbolinks:load', () => {
   }, (value) => {
     console.log(value);
     if (value) {
-    const link = document.querySelector('#magic');
+    const link = document.querySelector('.magic');
     link.click();
   }
   });
+
+  window.addEventListener('scroll', function () {
+    let navHome = document.querySelector('.nav-home');
+
+    navHome.classList.toggle('scrolling-active', window.scrollY > 0);
+  })
 
 });

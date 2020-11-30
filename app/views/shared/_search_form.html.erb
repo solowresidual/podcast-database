@@ -1,14 +1,15 @@
-<div class="form_group d-flex mt-4 search-box">
+<div class="form_group search-box search-wrapper">
   <div class="search-input">
     <%= form_tag podcasts_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control search-input",
-      placeholder: "Find an episode"
+      placeholder: "Find your next episode"
     %>
   </div>
   <div>
-    <%= submit_tag "Search", class: "btn btn-primary search-button" %>
+    <%= submit_tag "Search", class: "search-button" %>
     <% end %>
   </div>
 </div>
+

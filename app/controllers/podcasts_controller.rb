@@ -1,9 +1,9 @@
 class PodcastsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :show, :index ]
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    if params[ :query ]
-      @podcasts = Podcast.search_by_name_and_description(params[ :query])
+    if params[:query]
+      @podcasts = Podcast.search_by_name_and_description(params[:query])
     else
       @podcasts = Podcast.all
     end

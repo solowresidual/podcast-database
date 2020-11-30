@@ -1,16 +1,30 @@
 
-<! -- Main Home Banner -->
+<!-- Main Home Banner -->
 
 <div class="banner">
   <div class="container">
     <div class="banner-content">
       <div class="banner-info">
-        <div>
-          <h1 class="main-heading">The World's Largest <br> Podcast Database</h1>
-        </div>
+
+        <h1 class="main-heading my-5">The World's Largest <br> Podcast Database</h1>
         <div class="search-bar-home">
           <%= render 'shared/search_form' %>
-          <p></p>
+          <!-- sound waves start -->
+          <div class="sound-waves-div mt-5 mr-5">
+            <ul class="sound-waves">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <!-- sound waves end -->
         </div>
       </div>
     </div>
@@ -29,15 +43,17 @@
           <%= link_to "All Episodes", podcast_path(episode.podcast) %>
           <a href="#"><i class="fas fa-chevron-right"></i></a>
         </div>
-        <div class="episode-info">
+        <div class="episode-info" id="<%= episode.id %>">
           <span><%= '⭐️' * episode.average_rating if episode.average_rating.present? %></span>
           <h5><%= link_to episode.name.truncate(105) , episode, class: "ep-name-link" %></h5>
           <p><%= episode.description.truncate(200)%></p>
 
           <% if user_signed_in? %>
             <% if current_user.favorites.where(episode: episode).empty? %>
-            <button class="add-to-fave favorites">Add to Favorites</button>
-            <%= link_to "", episode_favorites_path(episode), method: :post, remote: true, id: "magic", class: "hidden" %>
+              <button class="add-to-fave favorites">Add to Favorites</button>
+              <%= link_to "", episode_favorites_path(episode), method: :post, remote: true, class: "hidden magic" %>
+              <% else %>
+              <%= link_to "Remove from Favorites", favorite_path(episode.favorite.ids[0]), method: :delete, remote: true, class: "add-to-fave" %>
             <% end %>
           <% end %>
         </div>
