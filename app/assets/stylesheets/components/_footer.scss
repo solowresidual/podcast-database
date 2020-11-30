@@ -8,16 +8,15 @@
   padding: 20px 50px;
   color: rgba(0,0,0,0.3);
   width: 100%;
-  border-top: 1px solid #5CBFA6;
+  border-top: 1px solid black;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
-  // color: #fff;
 }
 .footer-links a {
-  color: #5CBFA6;
+  color: black;
   opacity: 0.85;
   text-decoration: none;
   font-size: 24px;
@@ -25,11 +24,11 @@
 }
 
 .footer-links a:hover {
-  opacity: 0.15;
+  opacity: 0.55;
 }
 
 .footer-copyright {
-  color: #5CBFA6;
+  color: black;
   opacity: 0.85;
   letter-spacing: 2px;
 }
