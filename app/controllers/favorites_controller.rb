@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
     @favorite.episode = @episode
 
     if @favorite.save
-      redirect_to episode_path(@episode)
+      redirect_to back_with_anchor anchor: @episode.id
     else
       render 'episodes/show'
     end
@@ -28,6 +28,12 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
-    redirect_back(fallback_location: favorites_path)
+    redirect_to back_with_anchor anchor: @favorite.episode.id
+  end
+
+  private
+
+  def back_with_anchor(anchor: '')
+    "#{request.referrer}##{anchor}"
   end
 end
