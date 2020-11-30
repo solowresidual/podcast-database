@@ -41,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   }, (value) => {
     console.log(value);
     if (value) {
-    const link = document.querySelector('#magic');
+    const link = document.querySelector('.magic');
     link.click();
   }
   });
