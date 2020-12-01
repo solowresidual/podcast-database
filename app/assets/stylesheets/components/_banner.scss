@@ -5,7 +5,10 @@
   background-image: url('background-img-1.jpg');
   background-size: cover;
   object-fit: cover;
-
+  display: flex;
+  .container {
+    width: 50%;
+  }
 }
 
 
@@ -13,7 +16,6 @@
   position: relative;
   top: 180px;
   right: 45px;
-
 }
 
 
