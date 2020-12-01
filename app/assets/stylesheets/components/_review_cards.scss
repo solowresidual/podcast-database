@@ -48,4 +48,68 @@
   width: 85%;
 }
 
+// Star Rating
 
+// div.stars {
+//     width: 270px;
+//     display: inline-block
+// }
+
+// .stars input.radio_buttons {
+//     display: none;
+// }
+
+// .stars label.collection_radio_buttons {
+//     float: right;
+//     padding: 10px;
+//     font-size: 36px;
+//     color: #4A148C;
+//     transition: all .2s
+// }
+
+// .stars input.radio_buttons:checked~label.collection_radio_buttons:before {
+//     content: '\f005';
+//     color: #FD4;
+//     transition: all .25s
+// }
+
+// .stars input#review_rating_5:checked~label.collection_radio_buttons:before {
+//     color: #FE7;
+//     text-shadow: 0 0 20px #952
+// }
+
+// .stars input#review_rating_1:checked~label.collection_radio_buttons:before {
+//     color: #F62
+// }
+
+// .stars label.collection_radio_buttons:hover {
+//     transform: rotate(-15deg) scale(1.3)
+// }
+
+// .stars label.collection_radio_buttons:before {
+//     content: '\f006';
+//     font-family: FontAwesome
+// }
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.starrating input {display: none;}  /* Remove radio buttons */
+
+.starrating label:before {
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 1.5em;
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.starrating label
+{
+  color: #222222; /* Start color when not clicked */
+}
+
+.starrating input:checked ~ label
+{ color: #ffca08 ; } /* Set yellow color when star checked */
+
+.starrating input:hover ~ label
+{ color: #ffca08 ;  } /* Set yellow color when star hover */
