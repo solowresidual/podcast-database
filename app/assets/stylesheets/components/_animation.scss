@@ -1,0 +1,26 @@
+.static {
+  background-color: yellow;
+  overflow: hidden;
+  .mover {
+    background-color: red;
+    p {
+      background-color: blue;
+      display: block;
+      padding: 10px;
+      width: min-content;
+    }
+    animation: testanimation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    @keyframes testanimation {
+      from {
+        transform: translateY(100%)
+      }
+      to {
+        transform: translateY(-100%)
+      }
+    }
+  }
+}
+
