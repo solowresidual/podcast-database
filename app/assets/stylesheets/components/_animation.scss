@@ -1,0 +1,36 @@
+.static {
+
+  overflow: hidden;
+  width: 30%;
+  .mover {
+
+    display: flex;
+    flex-direction: column;
+    a {
+      display: block;
+      padding: 10px;
+      width: 150px;
+      height: 120px;
+      margin: 8px;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      background: linear-gradient(152deg, rgba(237,119,83,1) 7%, rgba(237,146,83,1) 52%, rgba(237,173,83,1) 99%);    }
+    a:nth-child(odd) {
+      align-self: flex-end;
+    }
+    animation: testanimation;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    @keyframes testanimation {
+      from {
+        transform: translateY(0%)
+      }
+      to {
+        transform: translateY(-100%)
+      }
+    }
+  }
+}
+
