@@ -273,6 +273,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   config.omniauth :spotify, ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'], scope: %w(
   playlist-read-private
+  playlist-modify-private
+  playlist-modify-public
   user-read-private
   user-read-email
 ).join(' ')

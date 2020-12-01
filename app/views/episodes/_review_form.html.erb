@@ -1,5 +1,8 @@
 <%= simple_form_for [episode, review] do |f| %>
   <%= f.input :content, placeholder: "Leave your review here", label: false %>
-  <%= f.input :rating, label: false %>
+  <div class="starrating d-flex">
+    <%= f.input_field :rating, boolean_style: :inline, collection: 1..5, as: :radio_buttons %>
+  </div>
+  <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>

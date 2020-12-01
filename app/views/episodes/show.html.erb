@@ -121,7 +121,7 @@
 
     </div>
   </div>
-</div>
+
 
   <div class="reviews-container">
       <h5 class="reviews-heading">Community Reviews:</h5>
@@ -129,6 +129,9 @@
       <% @reviews.each do |review| %>
         <li><%= review.content %></li>
         <li><%= '⭐️' * review.rating %></li>
+        <% review.tags.each do |tag| %>
+        <p> <%= tag.name %></p>
+        <% end %>
       <% end %>
       </ul>
       <% if user_signed_in? %>
@@ -140,8 +143,4 @@
         <% end %>
       <% end %>
     </div>
-
-
-
-
-
+  </div>
