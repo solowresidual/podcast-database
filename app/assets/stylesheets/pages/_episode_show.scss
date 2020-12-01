@@ -3,11 +3,11 @@
 .ep-show-banner {
   width: 100%;
   height: 420px;
-  background: #2d46b9;
+  background: $light-orange;
 }
 
 .ep-show-title {
-  color: #fff;
+  color: $black;
   position: relative;
   top: -220px;
   left: 350px;
@@ -23,26 +23,21 @@
 
 }
 
-.rating {
-  position: relative;
-  top: -200px;
-  left: 348px;
-  color: white;
-}
+// .rating {
+//   position: relative;
+//   top: -150px;
+//   left: 0px;
+//   color: $black;
+// }
 
-.ep-show-img-container {
-  // background: #fff;
-  // width: 250px;
-  // height: 250px;
-}
 
 .share-play-box {
   width: 325px;
   height: 250px;
   background: #fff;
   position: relative;
-  top: -100px;
-  left: 882px;
+  top: -135px;
+  left: 10px;
   border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
@@ -64,8 +59,9 @@
 }
 
 .play-button {
-  background: #DC4A65;
-  color: #fff;
+  background: $peach;
+  color: $white;
+  margin: auto;
 }
 
 .black-border-button {
@@ -88,21 +84,31 @@
   }
 }
 
-
-.tab-container {
-  width: 600px;
-
+.ep-description {
+  line-height: 2;
 }
+
 
 .page-content {
-  width: 80%;
   margin: 30px;
+  width: 100%;
 }
 
-.content-col-left {
-  width: 60%;
-}
+.content-row {
+    display: flex;
+  }
 
 .content-col-left {
-  width: 40%;
+  width: calc(100% - 450px);
+}
+
+.content-col-right {
+  width: 450px;
+}
+
+.show-tabs {
+  color: $black;
+  &.active {
+    border: 3px solid $peach;
+  }
 }

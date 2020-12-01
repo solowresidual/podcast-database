@@ -12,89 +12,67 @@
       <%= cl_image_tag @episode.podcast.photo.key, class: "ep-show-img" %>
       <!-- <h2 class="ep-show-title">Episode Title Here</h2> -->
       <h2 class="ep-show-title"><%= @episode.name %></h2>
-      <p class="rating">Average rating: <%= '⭐️' * @episode.average_rating if @episode.average_rating.present? %></p>
     </div>
 </div>
 
 
-<!-- share and play box -->
-<div class="share-play-box">
-  <div class="buttons-container">
-    <button class="interact-buttons play-button"><i class="fas fa-play mr-2"></i> Play Episode</button>
-    <button class="interact-buttons black-border-button">Rate Episode</button>
-    <button class="interact-buttons black-border-button">Add to Favorites</button>
-  </div>
-  <div class="icons-container">
-    <i class="fas fa-headphones fa-2x icon"></i>
-    <i class="far fa-heart fa-2x icon"></i>
-    <i class="fas fa-plus fa-2x icon"></i>
-    <i class="far fa-bookmark fa-2x icon"></i>
-  </div>
-</div>
-
-
+<!-- tabs in columns & rows -->
 <div class="page-content">
   <div class="content-row">
     <div class="content-col-left">
-      <!-- add tabs -->
+
       <div class="tab-container">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">About</a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
-            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Something</a>
+            <a class="nav-item nav-link active show-tabs" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">About</a>
+            <a class="nav-item nav-link show-tabs" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
+            <a class="nav-item nav-link show-tabs" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Player</a>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <p>Add all about information here</p>
+              <p class="mt-5">Podcast: <%= @episode.podcast.name %></p>
+              <p class="">Average rating: <%= '⭐️' * @episode.average_rating if @episode.average_rating.present? %></p>
+              <p class="ep-description"><%= @episode.description %></p>
           </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p class="mt-5">Community Reviews</p>
+            <% @reviews.each do |review| %>
+              <li><%= review.content %></li>
+              <li><%= '⭐️' * review.rating %></li>
+            <% end %>
+            </ul>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <!-- add spotify player here -->
+          </div>
         </div>
       </div>
 
     </div>
     <div class="content-col-right">
-      <h1>add content for boxes</h1>
+      <div class="share-play-box">
+        <div class="buttons-container">
+          <div class="interact-buttons play-button text-center mt-2"><i class="fas fa-play mr-2"></i> Play Episode</div>
+          <div class="interact-buttons black-border-button text-center">Rate Episode</div>
+          <div class="interact-buttons black-border-button text-center">Add to Favorites</div>
+        </div>
+        <div class="icons-container">
+          <i class="fas fa-headphones fa-2x icon"></i>
+          <i class="far fa-heart fa-2x icon"></i>
+          <i class="fas fa-plus fa-2x icon"></i>
+          <i class="far fa-bookmark fa-2x icon"></i>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
-
-<!-- tabs -->
-
-<div class="tab-container">
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">About</a>
-      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
-      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Something</a>
-    </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-      <p>Add all about information here</p>
-    </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-  </div>
-</div>
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 <!-- old layout -->
+
+<h2>We can remove this old layout once the page is finished</h2>
 
 <div class="ep-show-container">
   <div class="row">
