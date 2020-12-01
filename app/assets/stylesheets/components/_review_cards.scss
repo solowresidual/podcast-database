@@ -93,7 +93,13 @@
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
-.starrating input {display: none;}  /* Remove radio buttons */
+.starrating input {
+  display: none;
+}
+
+.starrating > div:first-of-type  {
+  padding-left: 0;
+}
 
 .starrating label:before {
   content: "\f005"; /* Star */
@@ -109,7 +115,7 @@
 }
 
 .starrating input:checked ~ label
-{ color: #ffca08 ; } /* Set yellow color when star checked */
+{ color: blue ; }
 
 .starrating input:hover ~ label
-{ color: #ffca08 ;  } /* Set yellow color when star hover */
+{ color: blue ;  }
