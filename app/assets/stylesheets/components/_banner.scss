@@ -25,21 +25,19 @@
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 90%;
-  background: #F09D37;
-
-}
-
-.index-text {
-  position: relative;
-
 }
 
 .index-text-content {
-  position: absolute;
-  top: 145px;
-  right: 18px;
+  margin-top: 100px;
   width: 40%;
-  color: white;
+  color: black;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  h1, h2, h3, p {
+        margin: 20px 20px;
+  }
 }
 
 
