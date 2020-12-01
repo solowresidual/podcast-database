@@ -51,4 +51,33 @@
   }
 }
 
+// Star Rating
 
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.starrating input {
+  display: none;
+}
+
+.starrating > div:first-of-type  {
+  padding-left: 0;
+}
+
+.starrating label:before {
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 1.7em;
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.starrating label
+{
+  color: gray; /* Start color when not clicked */
+}
+
+.starrating .form-check > input:checked ~ label
+{ color: red ; }
+
+.starrating .form-check > input:hover ~ label
+{ color: red ;  }
