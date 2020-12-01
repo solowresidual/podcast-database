@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_223139) do
+ActiveRecord::Schema.define(version: 2020_12_01_113543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,13 +67,27 @@ ActiveRecord::Schema.define(version: 2020_11_27_223139) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
-    t.string "tag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "episode_id", null: false
     t.bigint "user_id", null: false
     t.index ["episode_id"], name: "index_reviews_on_episode_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "review_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["review_id"], name: "index_taggings_on_review_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,4 +112,6 @@ ActiveRecord::Schema.define(version: 2020_11_27_223139) do
   add_foreign_key "favorites", "users"
   add_foreign_key "reviews", "episodes"
   add_foreign_key "reviews", "users"
+  add_foreign_key "taggings", "reviews"
+  add_foreign_key "taggings", "tags"
 end
