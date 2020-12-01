@@ -1,6 +1,41 @@
 
-
 <div class="m-5">
+<h2>My Favorites</h2>
+<hr>
+  <div class="container">
+    <div class="items">
+      <div class="items-head">
+        <p>To Listen</p>
+        <hr>
+      </div>
+
+      <div class="items-body">
+        <% @favorites.each_with_index do |favorite, index|  %>
+          <div>
+            <div class="items-body-content">
+              <span> <%= index + 1 %>.</span>
+              <%= favorite.episode.podcast.name %>
+              <%= link_to favorite.episode.name, episode_path(favorite.episode) %>
+              <%= link_to favorite.finished? ? "(Mark as unfinished)" : "(Mark as finished)",
+                favorite_path(favorite),
+                method: :patch %>
+
+              <%= link_to favorite_path(favorite), method: :delete do %>
+                <i class="fas fa-window-close" id="favorite-delete"></i>
+
+              <i class="fa fa-angle-right"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end  %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="m-5">
   <h2>My Favorites</h2>
   <hr>
   <div class="row">
@@ -14,11 +49,12 @@
               method: :patch %>
 
             <%= link_to favorite_path(favorite), method: :delete do %>
-              <i class="fas fa-window-close"></i>
+              <i class="fas fa-window-close" id="favorite-delete"></i>
             <% end %>
         </div>
       <% end  %>
     </div>
+
     <div class="col-6">
       <h4>Finished</h4>
       <% @finished .each do |favorite|  %>
@@ -29,12 +65,10 @@
               method: :patch %>
 
             <%= link_to favorite_path(favorite), method: :delete do %>
-              <i class="fas fa-window-close"></i>
+              <i class="fas fa-window-close" id="favorite-delete"></i>
             <% end %>
         </div>
       <% end  %>
     </div>
   </div>
-</div>
-
-
+</div> -->
