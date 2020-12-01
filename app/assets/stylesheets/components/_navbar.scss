@@ -34,7 +34,7 @@
 // On scroll
 
 .scrolling-active {
-  background: #E4C1CF;
+  background: $white;
   transition: background 0.5s ease-in-out;
   z-index: 1;
   &.nav-home {
