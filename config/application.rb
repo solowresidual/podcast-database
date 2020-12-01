@@ -22,3 +22,5 @@ module PodcastDatabase
     # the framework and any gems in your application.
   end
 end
+
+RSpotify.authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
