@@ -73,3 +73,32 @@
     color: $light-purple;
   }
 }
+
+
+
+// new favorites cards
+
+.best-episodes-container {
+  margin: 40px;
+}
+
+.best-episode-card {
+  height: 237px;
+  width: 273px;
+  background-image: url('https://carayol.com/wp-content/uploads/2019/01/Main-Podcast-Artwork.png');
+  background-size: cover;
+}
+
+.content-overlay {
+  transition: all 0.2s ease-in-out;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+}
+
