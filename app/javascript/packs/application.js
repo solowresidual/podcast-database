@@ -51,4 +51,5 @@ document.addEventListener('turbolinks:load', () => {
     navHome.classList.toggle('scrolling-active', window.scrollY > 0);
   })
 
+
 });
