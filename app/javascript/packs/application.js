@@ -52,12 +52,5 @@ document.addEventListener('turbolinks:load', () => {
     navHome.classList.toggle('scrolling-active', window.scrollY > 0);
   })
 
-  let cards = document.querySelector('.best-episode-card');
-
-  cards.addEventListener("mouseover", function (event) {
-    event.target.style.backgroundColor = black;
-  })
-
-
 
 });
