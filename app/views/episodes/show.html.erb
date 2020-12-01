@@ -39,7 +39,7 @@
             <% if current_user.favorites.where(episode: @episode).empty? %>
 
               <button class="favorites btn btn-warning">Add to Favorites</button>
-              <%= link_to "", episode_favorites_path(@episode), method: :post, remote: true, id: "magic", class: "hidden" %>
+              <%= link_to "", episode_favorites_path(@episode), method: :post, remote: true, class: "hidden magic" %>
               <% else %>
               <%= link_to "Remove from Favorites", favorite_path(@favorite), method: :delete, remote: true, class: "favorites btn btn-dark" %>
 
@@ -51,7 +51,7 @@
 
     </div>
   </div>
-</div>
+
 
   <div class="reviews-container">
       <h5 class="reviews-heading">Community Reviews:</h5>
@@ -70,3 +70,4 @@
         <% end %>
       <% end %>
     </div>
+  </div>

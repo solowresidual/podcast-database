@@ -1,9 +1,10 @@
 <div class="form_group search-box search-wrapper">
-  <div class="search-input">
+  <div>
     <%= form_tag podcasts_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control search-input",
+      class: "form-control",
+      id: "search-input-home",
       placeholder: "Find your next episode"
     %>
   </div>

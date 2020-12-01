@@ -16,3 +16,22 @@
     color: white;
   }
 }
+
+
+.btn-black {
+  background: $black;
+  border-radius: 100px;
+  color: #fff;
+  border: 0;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+  display: inline-block;
+
+  &:hover {
+    color: $black;
+    background: transparent;
+    border: 1px solid $black;
+    text-decoration: none;
+  }
+
+}

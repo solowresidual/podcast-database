@@ -15,7 +15,7 @@ class FavoritesController < ApplicationController
 
     if @favorite.save
       add_spotify_episode(@episode)
-      redirect_to episode_path(@episode)
+      redirect_to back_with_anchor anchor: @episode.id
     else
       render 'episodes/show'
     end
@@ -31,7 +31,13 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
     remove_spotify_episode(@favorite.episode)
     @favorite.destroy
-    redirect_back(fallback_location: favorites_path)
+    redirect_to back_with_anchor anchor: @favorite.episode.id
+  end
+
+  private
+
+  def back_with_anchor(anchor: '')
+    "#{request.referrer}##{anchor}"
   end
 
   private
