@@ -21,7 +21,7 @@ puts 'Users destroyed'
 
 puts 'Starting seed file...'
 
-RSpotify.authenticate("0103804df0d24b4d91ada9be19fe54aa", "283b8e5e69224c66a95a7ee87170167f")
+RSpotify.authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
 RSpotify.raw_response = true
 
 SEARCH_TERMS.each do |term|
@@ -32,7 +32,8 @@ SEARCH_TERMS.each do |term|
   shows.each do |show|
     podcast = Podcast.new(
       name: show['name'],
-      description: show['description']
+      description: show['description'],
+      spotify_id: show['id']
     )
 
     photo = URI.open(show['images'][0]['url'])
@@ -49,6 +50,7 @@ SEARCH_TERMS.each do |term|
       episode = Episode.create!(
         name: episode['name'],
         description: episode['description'],
+        spotify_id: episode['id'],
         podcast: podcast
       )
       puts "Created new epsiode: #{episode['name']} "

@@ -30,8 +30,9 @@
   </head>
 
   <body>
+  <%= render 'shared/background_colors' %>
 
-  <div class="page-container">
+  <div class="page-container" style="background-color: <%= @color %>">
     <div class="navbar-container"><%= render "shared/navbar" %>
     </div>
     <div class="content-container"><%= yield %>
