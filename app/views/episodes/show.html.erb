@@ -4,14 +4,97 @@
 <% content_for :meta_image, cl_image_path(@episode.podcast.photo.key) %>
 <!-- Meta Information -->
 
-<div class="ep-show-banner">
-    <%= cl_image_tag @episode.podcast.photo.key, class: "ep-show-img" %>
-    <h2 class="ep-show-title">Episode Title Here</h2>
 
+<!-- episode show banner -->
+
+<div class="ep-show-banner">
+    <div class="ep-show-img-container">
+      <%= cl_image_tag @episode.podcast.photo.key, class: "ep-show-img" %>
+      <!-- <h2 class="ep-show-title">Episode Title Here</h2> -->
+      <h2 class="ep-show-title"><%= @episode.name %></h2>
+      <p class="rating">Average rating: <%= '⭐️' * @episode.average_rating if @episode.average_rating.present? %></p>
+    </div>
+</div>
+
+
+<!-- share and play box -->
+<div class="share-play-box">
+  <div class="buttons-container">
+    <button class="interact-buttons play-button"><i class="fas fa-play mr-2"></i> Play Episode</button>
+    <button class="interact-buttons black-border-button">Rate Episode</button>
+    <button class="interact-buttons black-border-button">Add to Favorites</button>
+  </div>
+  <div class="icons-container">
+    <i class="fas fa-headphones fa-2x icon"></i>
+    <i class="far fa-heart fa-2x icon"></i>
+    <i class="fas fa-plus fa-2x icon"></i>
+    <i class="far fa-bookmark fa-2x icon"></i>
+  </div>
+</div>
+
+
+<div class="page-content">
+  <div class="content-row">
+    <div class="content-col-left">
+      <!-- add tabs -->
+      <div class="tab-container">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">About</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Something</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p>Add all about information here</p>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="content-col-right">
+      <h1>add content for boxes</h1>
+    </div>
+  </div>
+</div>
+
+<!-- tabs -->
+
+<div class="tab-container">
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">About</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Something</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <p>Add all about information here</p>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+  </div>
 </div>
 
 
 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- old layout -->
 
 <div class="ep-show-container">
   <div class="row">
@@ -79,24 +162,6 @@
         <% end %>
       <% end %>
     </div>
-
-
-<!-- new page layout -->
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">About</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Something</a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-    <p>Add all about information here</p>
-  </div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-</div>
-
 
 
 
