@@ -20,9 +20,11 @@
 // podcast index banner
 
 .podcast-index-banner {
-  background: #fff;
   width: 100%;
   height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 90%;
   background: #F09D37;
 
 }

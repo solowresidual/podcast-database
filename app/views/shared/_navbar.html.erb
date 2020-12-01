@@ -1,4 +1,14 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% if params[:controller] == "podcasts" %>
+  <% color = "#F8A33E" %>
+  <% elsif params[:controller] == "episodes" %>
+  <% color = "#C3F0C7" %>
+  <% elsif params[:controller] == "reviews" %>
+  <%color = "#FEC864" %>
+  <% elsif params[:controller] == "favorites" %>
+  <%color = "#FEC864" %>
+<% end %>
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-color: <%= color %>">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo.svg", class: "logo" %>
   <% end %>
