@@ -1,5 +1,4 @@
-<div class="form_group search-box search-wrapper search-size">
-  <div>
+<div class="form_group search-wrapper">
     <%= form_tag podcasts_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
@@ -7,10 +6,7 @@
       id: "search-input-home",
       placeholder: "Find your next episode"
     %>
-  </div>
-  <div>
     <%= submit_tag "Search", class: "search-button" %>
     <% end %>
-  </div>
 </div>
 
