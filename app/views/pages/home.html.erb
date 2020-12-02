@@ -6,7 +6,7 @@
     <div class="banner-info">
         <h1 class="main-heading mb-5">The World's Largest <br> Podcast Database</h1>
         <%= link_to "Explore all podcasts", podcasts_path, class: "btn-black" %>
-        <div class="search-bar-home">
+        <div class="search-bar-home mt-4">
           <%= render 'shared/search_form' %>
         </div>
     </div>
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<h2 class="text-center m-5">Our Popular Episodes</h2>
+<h2 class="text-center m-5">Popular Episodes</h2>
 
 <div class="popular-cards-container">
   <% @popular_episodes.each do |episode| %>
