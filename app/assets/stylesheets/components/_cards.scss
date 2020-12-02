@@ -4,6 +4,11 @@
   grid-gap: 16px;
 }
 
+.border-img {
+  border-radius: 8px 0px 0px 8px;
+  width: 120px !important;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
