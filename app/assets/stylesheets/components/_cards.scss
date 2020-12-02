@@ -43,10 +43,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .pod-name {
-  color: $dark-purple;
+  color: $black;
   &:hover {
     text-decoration: none;
     color: $light-purple;
@@ -79,6 +80,7 @@
 
 .podcast-text {
   padding: 8px;
+  width: 480px;
   p {
     margin-bottom: 0;
   }
