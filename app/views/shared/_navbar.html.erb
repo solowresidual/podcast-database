@@ -1,11 +1,13 @@
-<% if params[:controller] == "podcasts" %>
-  <% color = "$grey" %>
+<% if params[:controller] == "podcasts" && params[:action] == "index" %>
+  <% color = "#F8A33E" %>
+  <% elsif params[:controller] == "podcasts" && params[:action] == "show" %>
+  <% color = "#FEC864" %>
   <% elsif params[:controller] == "episodes" %>
   <% color = "#FEC864" %>
   <% elsif params[:controller] == "reviews" %>
-  <%color = "#FEC864" %>
+  <%color = "#F8A33E" %>
   <% elsif params[:controller] == "favorites" %>
-  <%color = "#FEC864" %>
+  <%color = "#F8A33E" %>
 <% end %>
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-color: <%= color %>">
