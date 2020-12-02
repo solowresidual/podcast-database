@@ -5,7 +5,10 @@
   background-image: url('background-img-1.jpg');
   background-size: cover;
   object-fit: cover;
-
+  display: flex;
+  .container {
+    width: 50%;
+  }
 }
 
 
@@ -13,7 +16,6 @@
   position: relative;
   top: 180px;
   right: 45px;
-
 }
 
 
@@ -25,22 +27,44 @@
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 90%;
-  background: #F09D37;
-
-}
-
-.index-text {
-  position: relative;
-
+  background-color: #F8A33E;
+  padding-top: 40px;
 }
 
 .index-text-content {
-  position: absolute;
-  top: 145px;
-  right: 18px;
+  // margin-top: 100px;
   width: 40%;
-  color: white;
+  color: black;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  h1, h2, h3, p {
+        margin: 20px 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
 }
 
+review index banner
 
+.review-index-banner {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 90%;
+  background-color: #F8A33E;
+  padding-top: 40px;
+}
 
+.review-text-content {
+  // margin-top: 100px;
+  width: 40%;
+  color: $black;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}

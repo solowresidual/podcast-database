@@ -1,13 +1,19 @@
-<h2 class="text-center">My Reviews</h2>
+<div class="review-index-banner">
+  <div>
+    <div class="review-text-content">
+      <h2>My Reviews</h2>
+    </div>
+  </div>
+</div>
 
 <div class="review-cards-container">
     <% @reviews.each do |review| %>
       <div class="podcast">
-        <div class="podcast-preview">
+        <div class="review-preview">
           <h5><%= review.episode.podcast.name %></h5>
         </div>
         <div class="review-info">
-          <h5><%= review.episode.name %></h5>
+          <h5><%= link_to review.episode.name, episode_path(review.episode), class: "ep-name-link" %></h5>
           <span><%= '⭐️' * review.rating if review.rating.present? %></span>
           <p><%= review.content %></p>
           <div class="review-buttons">
