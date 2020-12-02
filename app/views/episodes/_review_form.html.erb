@@ -3,6 +3,6 @@
   <div class="starrating d-flex">
     <%= f.input_field :rating, boolean_style: :inline, collection: 1..5, as: :radio_buttons %>
   </div>
-  <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
+  <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: { class: "select2", multiple: "multiple" } %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>

@@ -11,6 +11,10 @@ require("channels")
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
+import { initSelect2 } from '../plugins/init_select2';
+// [...]
+
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -40,16 +44,15 @@ document.addEventListener('turbolinks:load', () => {
   }, (value) => {
     console.log(value);
     if (value) {
-    const link = document.querySelector('.magic');
-    link.click();
-  }
+      const link = document.querySelector('.magic');
+      link.click();
+    }
   });
+  initSelect2();
 
   window.addEventListener('scroll', function () {
     let navHome = document.querySelector('.nav-home');
 
     navHome.classList.toggle('scrolling-active', window.scrollY > 0);
   })
-
-
 });
