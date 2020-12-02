@@ -10,14 +10,14 @@
   </div>
 </div>
 
-
-<div class="podcast-cards">
+<div class="page-margin">
+  <div class="podcast-cards">
     <% if @podcasts.empty? %>
       <p>Sorry we could not find your result</p>
     <% else %>
       <% @podcasts.each do |podcast| %>
         <div class="card-product">
-          <%= cl_image_tag podcast.photo.key, alt: "alttext" %>
+          <%= cl_image_tag podcast.photo.key, alt: "alttext", class: "border-img" %>
           <div class="podcast-text">
             <h5><%= link_to podcast.name, podcast, class: "pod-name" %></h5>
             <p> <%= podcast.description.truncate(120) %> </p>
@@ -26,4 +26,5 @@
         </div>
       <% end %>
     <% end %>
+  </div>
 </div>

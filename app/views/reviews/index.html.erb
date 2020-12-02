@@ -1,11 +1,11 @@
 <div class="review-index-banner">
   <div>
     <div class="review-text-content">
-      <h2>My Reviews</h2>
+      <h1>My Reviews</h1>
     </div>
   </div>
 </div>
-
+<div class="page-margin"></div>
 <div class="review-cards-container">
     <% @reviews.each do |review| %>
       <div class="podcast">
@@ -14,7 +14,7 @@
         </div>
         <div class="review-info">
           <h5><%= link_to review.episode.name, episode_path(review.episode), class: "ep-name-link" %></h5>
-          <span><%= '⭐️' * review.rating if review.rating.present? %></span>
+          <p><span><%= '⭐️' * review.rating if review.rating.present? %></span></p>
           <p><%= review.content %></p>
           <div class="review-buttons">
             <p class="btn-reviews"><%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %></p>
@@ -23,4 +23,5 @@
         </div>
       </div>
     <% end %>
+</div>
 </div>
