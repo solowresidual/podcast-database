@@ -39,3 +39,41 @@
 #favorite-delete {
   color: #ea2c62;
 }
+
+.remove-fave {
+  background: $orange;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: $black;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  letter-spacing: 1px;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+  }
+}
+
+.add-to-fave {
+  background-color: $peach;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: $black;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  letter-spacing: 1px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+

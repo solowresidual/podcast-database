@@ -1,5 +1,5 @@
 .podcast {
-  background: #fff;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -21,15 +21,15 @@
 }
 
 .podcast-preview {
-  background: $white;
+  background-color: #fff;
   color: $black;
   padding: 30px;
   max-width: 200px;
+  border-right: 2px solid $black;
 }
 
-
 .podcast-preview a {
-  color: #fff;
+  color: $black;
   display: inline-block;
   font-size: 12px;
   opacity: 0.6;
@@ -51,21 +51,6 @@
 }
 
 
-.add-to-fave {
-  background-color: $dark-purple;
-  border: 0;
-  border-radius: 50px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  font-size: 16px;
-  padding: 12px 25px;
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  letter-spacing: 1px;
-}
-
-
 .popular-cards-container {
   margin: 50px;
   display: grid;
@@ -78,6 +63,7 @@
 
   &:hover {
     text-decoration: none;
+    color: $black;
     opacity: 0.8;
   }
 }
