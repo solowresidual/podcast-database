@@ -40,8 +40,6 @@ class FavoritesController < ApplicationController
     "#{request.referrer}##{anchor}"
   end
 
-  private
-
   def create_spotify_playlist
     if current_user.provider == 'spotify'
       RSpotify.authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
