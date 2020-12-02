@@ -15,6 +15,7 @@
 .secondary-info {
   font-size: 24px;
   font-family: 'Poppins', sans-serif;
+  opacity: 0.8;
 }
 
 .episode-information {
@@ -29,21 +30,18 @@
   background-size: cover;
   border-radius: 50%;
   margin: 40px;
-
 }
 
-
 .share-play-box {
+  padding: 10px 0;
   width: 325px;
-  height: 250px;
   background: #fff;
   position: relative;
-  top: -135px;
+  top: -50px;
   left: 10px;
   border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
-
 
 .buttons-container {
   display: flex;
@@ -88,6 +86,8 @@
 
 .ep-description {
   line-height: 2;
+  padding-top: 20px;
+  opacity: 0.7;
 }
 
 
@@ -135,10 +135,12 @@
 
 .content-col-left {
   width: calc(100% - 450px);
+  margin: 0 20px;
 }
 
 .content-col-right {
-  width: 450px;
+  width: 400px;
+  margin: 0 20px;
 }
 
 .show-tabs {
@@ -147,19 +149,31 @@
 
 
 .nav-tabs {
-  border-bottom: 3px solid $peach;
+  border-bottom: 1px solid $peach;
   color: $black;
+  padding-bottom: 8px;
+
+}
+
+.nav-tabs .nav-link {
+  background-color: $peach;
+  margin-right: 4px;
+  opacity: 0.7;
+  color: #FFF;
+  border-radius: 5px;
 }
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  border: 3px solid $peach;
+  background-color: $peach;
+  border-bottom: 1px solid $peach;
+  opacity: 1;
+  color: #FFF;
 }
 
 
 .show-other-content {
   width: 325px;
-  height: 250px;
   background: $black;
   position: relative;
   left: 10px;

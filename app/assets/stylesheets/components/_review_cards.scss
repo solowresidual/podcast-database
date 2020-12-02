@@ -55,17 +55,29 @@
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
+.starrating {
+  padding-bottom: 20px;
+}
 .starrating input {
   display: none;
+}
+
+.starrating > div {
+  padding-left: 5px;
 }
 
 .starrating > div:first-of-type  {
   padding-left: 0;
 }
 
-.starrating label:before {
+.starrating label {
+  visibility: hidden;
+}
+
+.starrating label:after {
   content: "\f005"; /* Star */
-  margin: 2px;
+  visibility: visible;
+  margin: 1px;
   font-size: 1.7em;
   font-family: FontAwesome;
   display: inline-block;
@@ -74,10 +86,13 @@
 .starrating label
 {
   color: gray; /* Start color when not clicked */
+  opacity: 0.5;
 }
 
-.starrating .form-check > input:checked ~ label
-{ color: red ; }
+.starrating .form-check > input:checked ~ label {
+  color: $peach;
+  opacity: 1;
+}
 
 .starrating .form-check > input:hover ~ label
-{ color: red ;  }
+{ color: $peach ;  }
