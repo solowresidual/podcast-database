@@ -13,13 +13,19 @@
   </div>
   <div class="static">
     <div class="mover">
-      <% @popular_episodes.each do |episode| %>
-        <a><%= episode.name%></a>
+      <% @latest_episodes.each do |episode| %>
+        <a>
+          <span class="podcast-name"><%= episode.podcast.name%></span><br/>
+          <span class="episode-name"><%= episode.name%></span>
+        </a>
       <% end %>
     </div>
     <div class="mover">
-      <% @popular_episodes.each do |episode| %>
-        <a><%= episode.name%></a>
+      <% @latest_episodes.each do |episode| %>
+        <a>
+          <span class="podcast-name"><%= episode.podcast.name%></span><br/>
+          <span class="episode-name"><%= episode.name%></span>
+        </a>
       <% end %>
     </div>
   </div>
