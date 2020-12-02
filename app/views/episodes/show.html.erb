@@ -12,18 +12,16 @@
       <%= cl_image_tag @episode.podcast.photo.key, class: "ep-show-img" %>
       <div class="episode-information">
         <h2 class="ep-show-title"><%= @episode.name %></h2>
-        <p class="mt-3 secondary-info">Podcast: <%= @episode.podcast.name %></p>
-        <p class="secondary-info">Average rating: <%= '⭐️' * @episode.average_rating if @episode.average_rating.present? %></p>
+        <p class="mt-3 secondary-info"><%= @episode.podcast.name %></p>
+        <p class="secondary-info"><%= sanitize '<i class="fas fa-star stars"></i>' * @episode.average_rating if @episode.average_rating.present? %></p>
       </div>
     </div>
 </div>
-
 
 <!-- tabs in columns & rows -->
 <div class="page-content">
   <div class="content-row">
     <div class="content-col-left">
-
       <div class="tab-container">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -34,32 +32,15 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              <p class="mt-5">Podcast: <%= @episode.podcast.name %></p>
-              <p class="">Average rating: <%= '⭐️' * @episode.average_rating if @episode.average_rating.present? %></p>
               <p class="ep-description"><%= @episode.description %></p>
           </div>
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <p class="mt-5 mb-4 reviews-text">Episode Reviews</p>
-            <div class="ep-show-review-cards">
-              <ul>
                 <% @reviews.each do |review| %>
-                  <li><%= '⭐️' * review.rating %></li>
-                  <li class="mt-2"><%= review.content %></li>
+                  <div class="ep-show-review-cards">
+                    <%= sanitize '<i class="fas fa-star stars"></i>' * review.rating %>
+                    <%= review.content %>
+                  </div>
                 <% end %>
-              </ul>
-
-              <div class="leaving-reviews">
-                <% if user_signed_in? %>
-                  <% if current_user.reviews.where(episode: @episode).empty?  %>
-
-                    <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
-                  <% else %>
-                    <%= link_to "Edit your review", reviews_path, class: "btn-black mr-3"  %>
-                  <% end %>
-                <% end %>
-              </div>
-
-            </div>
           </div>
           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           <% if !@episode.spotify_id.nil? %>
@@ -75,21 +56,33 @@
     <div class="content-col-right">
       <div class="share-play-box">
         <div class="buttons-container">
-          <div class="interact-buttons play-button text-center mt-2"><i class="fas fa-play mr-2"></i> Play Episode</div>
-          <div class="interact-buttons black-border-button text-center">Rate Episode</div>
-          <div class="interact-buttons black-border-button text-center">Add to Favorites</div>
+          <div class="interact-buttons play-button text-center mt-2">
+            <% if user_signed_in? %>
+              <% if current_user.favorites.where(episode: @episode).empty? %>
+                <%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, remote: true %>
+                <% else %>
+                <%= link_to "Remove from Favorites", favorite_path(@episode.favorite.ids[0]), method: :delete, remote: true %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
         <div class="icons-container">
-          <i class="fas fa-headphones fa-2x icon"></i>
-          <i class="far fa-heart fa-2x icon"></i>
-          <i class="fas fa-plus fa-2x icon"></i>
-          <i class="far fa-bookmark fa-2x icon"></i>
+          <%= render 'shared/share_buttons' %>
         </div>
       </div>
 
       <div class="show-other-content">
-        <p>Keep this box? Could display more information here</p>
-        <p>Look at the podchaser episode show for indeas</p>
+        <div class="leaving-reviews">
+
+          <% if user_signed_in? %>
+            <% if current_user.reviews.where(episode: @episode).empty?  %>
+
+              <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
+            <% else %>
+              <%= link_to "Edit your review", reviews_path, class: "btn-black mr-3"  %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
 
     </div>
@@ -97,88 +90,3 @@
 </div>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<!-- old layout -->
-
-<h2>We can remove this old layout once the page is finished</h2>
-
-<div class="ep-show-container">
-  <div class="row">
-    <div class="column left">
-      <h3><%= @episode.name %></h3>
-       <p><strong>Average rating: </strong><%= '⭐️' * @episode.average_rating if @episode.average_rating.present? %></p>
-       <p>Podcast: <%= @episode.podcast.name %></p>
-       <p class="mt-4">About this episode:</p>
-       <p class="ep-description"><%= @episode.description %></p>
-
-       <div class="ep-icons-container mt-4">
-        <div class="listen-on">
-          <p>Listen on:</p>
-          <a href="#"><i class="fab fa-spotify fa-2x mr-3"></i></a>
-          <a href="#"><i class="fab fa-itunes fa-2x mr-3"></i></a>
-          <a href="#"><i class="fab fa-google-play fa-2x"></i></a>
-
-        </div>
-        <div class="share-via">
-          <p>Share via:</p>
-          <a href="#"><i class="fab fa-instagram fa-2x mr-3"></i></a>
-          <a href="#"><i class="fab fa-twitter fa-2x mr-3"></i></a>
-          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-        </div>
-       </div>
-
-
-    </div>
-    <div class="column right">
-      <%= cl_image_tag @episode.podcast.photo.key, class: "episode-show-image" %>
-
-      <div class="episode-info m-4">
-        <% if user_signed_in? %>
-            <% if current_user.favorites.where(episode: @episode).empty? %>
-
-              <button class="favorites btn btn-warning">Add to Favorites</button>
-              <%= link_to "", episode_favorites_path(@episode), method: :post, remote: true, class: "hidden magic" %>
-              <% else %>
-              <%= link_to "Remove from Favorites", favorite_path(@favorite), method: :delete, remote: true, class: "favorites btn btn-dark" %>
-
-            <% end %>
-        <% end %>
-        <h5 class="mt-3">Podcast Categories:</h5>
-        <p><%= @episode.podcast.category %></p>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="reviews-container">
-      <h5 class="reviews-heading">Community Reviews:</h5>
-      <ul>
-      <% @reviews.each do |review| %>
-        <li><%= review.content %></li>
-        <li><%= '⭐️' * review.rating %></li>
-        <% review.tags.each do |tag| %>
-        <p> <%= tag.name %></p>
-        <% end %>
-      <% end %>
-      </ul>
-      <% if user_signed_in? %>
-        <% if current_user.reviews.where(episode: @episode).empty?  %>
-
-          <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
-        <% else %>
-          <%= link_to "Edit your review", reviews_path, class: "btn btn-dark mt-4"  %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>

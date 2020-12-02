@@ -1,8 +1,8 @@
 <%= simple_form_for [episode, review] do |f| %>
   <%= f.input :content, placeholder: "Leave your review here", label: false %>
+  <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: { class: "select2", multiple: "multiple" }, label: "How would you categorise this episode?" %>
   <div class="starrating d-flex">
     <%= f.input_field :rating, boolean_style: :inline, collection: 1..5, as: :radio_buttons %>
   </div>
-  <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: { class: "select2", multiple: "multiple" } %>
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn-black' %>
 <% end %>
