@@ -3,14 +3,26 @@
 <% content_for :meta_description, @podcast.description %>
 <% content_for :meta_image, cl_image_path(@podcast.photo.key) %>
 <!-- Meta Information -->
-<h3 class="text-center m-5"><%= @podcast.name %></h3>
+<div class="podcast-show-banner">
+  <h3 class="m-5 pod-show-title"><%= @podcast.name %></h3>
+  <%= cl_image_tag @podcast.photo.key, class: "pod-show-img" %>
+</div>
+
+
+
 
 <div class="pod-index-container">
-  <div class="pod-index-card">
-    <ul class="podcast-list">
-        <% @episodes.each do |episode| %>
-          <li><%= link_to episode.name, episode %></li>
-        <% end %>
-    </ul>
-  </div>
+  <% @episodes.each do |episode| %>
+<%= link_to episode_path(episode) do  %>
+    <div class="pod-index-card">
+        <div class="podcast-list">
+          <div><%= episode.name %></div>
+          <% if episode.average_rating %>
+            <div><%= "⭐️" * episode.average_rating %></div>
+          <% end %>
+        </div>
+    </div>
+<% end %>
+  <% end %>
 </div>
+

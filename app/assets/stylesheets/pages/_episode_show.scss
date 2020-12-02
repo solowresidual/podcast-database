@@ -3,15 +3,24 @@
 .ep-show-banner {
   width: 100%;
   height: 420px;
-  background: $light-orange;
+  background-image: linear-gradient(180deg, $light-orange, $light-gray);
+  // background: $light-orange;
 }
 
 .ep-show-title {
   color: $black;
+  font-size: 45px;
+}
+
+.secondary-info {
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.episode-information {
   position: relative;
   top: -220px;
   left: 350px;
-  font-size: 35px;
 }
 
 .ep-show-img {
@@ -22,13 +31,6 @@
   margin: 40px;
 
 }
-
-// .rating {
-//   position: relative;
-//   top: -150px;
-//   left: 0px;
-//   color: $black;
-// }
 
 
 .share-play-box {
@@ -89,6 +91,39 @@
 }
 
 
+.ep-show-review-cards {
+  position: relative;
+  background: #fff;
+  border-radius: .4em;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+    ul {
+    list-style: none;
+  }
+}
+
+.ep-show-review-cards:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 25px solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -12.5px;
+  margin-bottom: -25px;
+}
+
+
+
 .page-content {
   margin: 30px;
   width: 100%;
@@ -108,7 +143,29 @@
 
 .show-tabs {
   color: $black;
-  &.active {
-    border: 3px solid $peach;
-  }
+}
+
+
+.nav-tabs {
+  border-bottom: 3px solid $peach;
+  color: $black;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  border: 3px solid $peach;
+}
+
+
+.show-other-content {
+  width: 325px;
+  height: 250px;
+  background: $black;
+  position: relative;
+  left: 10px;
+  top: -20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
