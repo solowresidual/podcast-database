@@ -1,11 +1,13 @@
-<% if params[:controller] == "podcasts" %>
+<% if params[:controller] == "podcasts" && params[:action] == "index" %>
+  <% color = "#F8A33E" %>
+  <% elsif params[:controller] == "podcasts" && params[:action] == "show" %>
   <% color = "#FEC864" %>
   <% elsif params[:controller] == "episodes" %>
   <% color = "#FEC864" %>
   <% elsif params[:controller] == "reviews" %>
-  <%color = "#FEC864" %>
+  <%color = "#F8A33E" %>
   <% elsif params[:controller] == "favorites" %>
-  <%color = "#FEC864" %>
+  <%color = "#F8A33E" %>
 <% end %>
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-color: <%= color %>">
@@ -18,7 +20,9 @@
   </button>
 
 <! -- Search Form -->
-  <%= render 'shared/search_form' %>
+
+  <div style="display: flex;">
+      <%= render 'shared/search_form' %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -39,4 +43,8 @@
       <% end %>
     </ul>
   </div>
+
+  </div>
+
+
 </div>
