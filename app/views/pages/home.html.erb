@@ -40,15 +40,15 @@
         </div>
         <div class="episode-info" id="<%= episode.id %>">
           <span><%= '⭐️' * episode.average_rating if episode.average_rating.present? %></span>
-          <h5><%= link_to episode.name.truncate(105) , episode, class: "ep-name-link" %></h5>
-          <p><%= episode.description.truncate(200)%></p>
+          <h5 class="mb-3"><%= link_to episode.name.truncate(105) , episode, class: "ep-name-link" %></h5>
+          <p><%= episode.description.truncate(240)%></p>
 
           <% if user_signed_in? %>
             <% if current_user.favorites.where(episode: episode).empty? %>
               <button class="add-to-fave favorites">Add to Favorites</button>
               <%= link_to "", episode_favorites_path(episode), method: :post, remote: true, class: "hidden magic" %>
               <% else %>
-              <%= link_to "Remove from Favorites", favorite_path(episode.favorite.ids[0]), method: :delete, remote: true, class: "add-to-fave" %>
+              <%= link_to "Remove from Favorites", favorite_path(episode.favorite.ids[0]), method: :delete, remote: true, class: "remove-fave" %>
             <% end %>
           <% end %>
         </div>
