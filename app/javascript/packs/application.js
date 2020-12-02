@@ -52,7 +52,8 @@ document.addEventListener('turbolinks:load', () => {
 
   window.addEventListener('scroll', function () {
     let navHome = document.querySelector('.nav-home');
-
-    navHome.classList.toggle('scrolling-active', window.scrollY > 0);
+    if (navHome) {
+      navHome.classList.toggle('scrolling-active', window.scrollY > 0);
+    }
   })
 });

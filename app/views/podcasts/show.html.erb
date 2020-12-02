@@ -4,25 +4,38 @@
 <% content_for :meta_image, cl_image_path(@podcast.photo.key) %>
 <!-- Meta Information -->
 <div class="podcast-show-banner">
-  <h3 class="m-5 pod-show-title"><%= @podcast.name %></h3>
-  <%= cl_image_tag @podcast.photo.key, class: "pod-show-img" %>
+  <div class="podcast-show-info">
+    <h3 class="pod-show-title mb-4"><%= @podcast.name %></h3>
+    <h5 class="pod-description"><%= @podcast.description %></h5>
+  </div>
+  <%= cl_image_tag @podcast.photo.key, class: "pod-show-img", id: "image-pod" %>
 </div>
-
-
 
 
 <div class="pod-index-container">
-  <% @episodes.each do |episode| %>
-<%= link_to episode_path(episode) do  %>
-    <div class="pod-index-card">
+  <% @episodes.each_with_index do |episode, index| %>
+    <%= link_to episode_path(episode) do  %>
+      <div class="pod-index-card">
         <div class="podcast-list">
-          <div><%= episode.name %></div>
-          <% if episode.average_rating %>
-            <div><%= "⭐️" * episode.average_rating %></div>
-          <% end %>
+          <div class="flex-btwn">
+            <div>
+              <span><%= index + 1 %>. </span><%= episode.name %>
+            </div>
+            <% if episode.average_rating %>
+              <div>
+                <%= sanitize '<i class="fas fa-star stars"></i>' * episode.average_rating %>
+              </div>
+            <% else %>
+              <div>
+                <%= sanitize '<i class="fas fa-star stars"></i>' * 0 %>
+              </div>
+            <% end %>
+          </div>s
+          <%= episode.description.truncate(85) %>
         </div>
-    </div>
-<% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
+
 
