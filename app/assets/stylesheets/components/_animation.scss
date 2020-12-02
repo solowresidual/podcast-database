@@ -1,27 +1,53 @@
 .static {
 
   overflow: hidden;
-  width: 30%;
+  width: 40%;
+
+  &:hover {
+            .mover {
+                animation-play-state: paused;
+            }
+        }
+
   .mover {
 
     display: flex;
     flex-direction: column;
+
     a {
-      display: block;
-      padding: 10px;
-      width: 150px;
-      height: 120px;
-      margin: 8px;
-      color: white;
-      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &:hover {
+        transition-duration: 0.5s;
+        transform: scale(1.02);
+      }
+      padding: 20px;
+      width: 300px;
+      height: 150px;
+      margin: 50px;
+      color: $black;
+      border-radius: 16px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       background: linear-gradient(152deg, rgba(237,119,83,1) 7%, rgba(237,146,83,1) 52%, rgba(237,173,83,1) 99%);
+
+      .podcast-name {
+        font-size: 20px;
+      }
+
+      .episode-name {
+        font-size: 15px;
+        opacity: 0.8;
+
+      }
      }
+
     a:nth-child(odd) {
       align-self: flex-end;
     }
+
     animation: testanimation;
-    animation-duration: 10s;
+    animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     @keyframes testanimation {
