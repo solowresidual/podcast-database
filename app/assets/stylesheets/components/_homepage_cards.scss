@@ -1,5 +1,5 @@
 .podcast {
-  background-color: #fff;
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -21,11 +21,12 @@
 }
 
 .podcast-preview {
-  background-color: $dark-purple;
-  color: #fff;
+  background: $white;
+  color: $black;
   padding: 30px;
   max-width: 200px;
 }
+
 
 .podcast-preview a {
   color: #fff;
@@ -34,6 +35,13 @@
   opacity: 0.6;
   margin-top: 30px;
   text-decoration: none;
+}
+
+.preview-image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background-size: cover;
 }
 
 .episode-info {
@@ -66,10 +74,10 @@
 }
 
 .ep-name-link {
-  color: $dark-purple;
+  color: $black;
 
   &:hover {
     text-decoration: none;
-    color: $light-purple;
+    opacity: 0.8;
   }
 }
