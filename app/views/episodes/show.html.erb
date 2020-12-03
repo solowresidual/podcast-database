@@ -9,7 +9,10 @@
 
 <div class="ep-show-banner">
     <div class="ep-show-img-container">
-      <%= cl_image_tag @episode.podcast.photo.key, class: "ep-show-img" %>
+      <div class="image-flex">
+        <%= cl_image_tag @episode.podcast.photo.key, class: "ep-show-img" %>
+        <%= link_to "Back to all episodes", podcast_path(@episode.podcast), class: "" %>
+      </div>
       <div class="episode-information">
         <h2 class="ep-show-title"><%= @episode.name %></h2>
         <p class="mt-3 secondary-info"><%= @episode.podcast.name %></p>

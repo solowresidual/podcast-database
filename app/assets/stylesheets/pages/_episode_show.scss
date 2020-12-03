@@ -9,6 +9,7 @@
 .ep-show-title {
   color: $black;
   font-size: 45px;
+  width: 83%;
 }
 
 .secondary-info {
@@ -18,9 +19,6 @@
 }
 
 .episode-information {
-  // position: relative;
-  // top: -220px;
-  // left: 350px;
   width: 70%;
 }
 
@@ -47,6 +45,25 @@
   display: flex;
   padding-top: 30px;
   align-items: center;
+}
+
+.image-flex {
+  display: flex;
+  flex-direction: column;
+  a {
+    background: $black;
+    color: #fff;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 5%;
+    margin-top: -20px;
+    padding: 5px;
+    &:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+  }
 }
 
 .buttons-container {
@@ -113,8 +130,6 @@
   color: $black;
   border-radius: .4em;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-  // height: 175px;
-
     ul {
     list-style: none;
   }
@@ -139,9 +154,6 @@
   display: flex;
   justify-content: space-between;
 }
-// .review-content {
-//   display: block;
-// }
 
 .ep-show-review-cards:after {
   content: '';
@@ -158,11 +170,8 @@
   margin-bottom: -25px;
 }
 
-
-
 .page-content {
   margin: 30px;
-  width: 100%;
 }
 
 .content-row {
