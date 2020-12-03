@@ -18,9 +18,10 @@
 }
 
 .episode-information {
-  position: relative;
-  top: -220px;
-  left: 350px;
+  // position: relative;
+  // top: -220px;
+  // left: 350px;
+  width: 70%;
 }
 
 .ep-show-img {
@@ -40,6 +41,12 @@
   left: 10px;
   border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ep-show-img-container {
+  display: flex;
+  padding-top: 30px;
+  align-items: center;
 }
 
 .buttons-container {
@@ -187,3 +194,4 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
 }
+

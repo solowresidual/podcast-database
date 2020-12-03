@@ -14,18 +14,18 @@
   <div class="static">
     <div class="mover">
       <% @latest_episodes.each do |episode| %>
-        <a>
+        <%= link_to episode_path(episode) do %>
           <span class="podcast-name"><%= episode.podcast.name%></span><br/>
-          <span class="episode-name"><%= episode.name.truncate(45)%></span>
-        </a>
+          <span class="episode-name"><%= episode.name.truncate(45) %></span>
+        <% end %>
       <% end %>
     </div>
     <div class="mover">
       <% @latest_episodes.each do |episode| %>
-        <a>
+        <%= link_to episode_path(episode) do %>
           <span class="podcast-name"><%= episode.podcast.name%></span><br/>
-          <span class="episode-name"><%= episode.name.truncate(45)%></span>
-        </a>
+          <span class="episode-name"><%= episode.name.truncate(45) %></span>
+        <% end %>
       <% end %>
     </div>
   </div>
