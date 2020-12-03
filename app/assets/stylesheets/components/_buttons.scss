@@ -33,7 +33,13 @@
     border: 1px solid $black;
     text-decoration: none;
   }
+}
 
+.leaving-reviews {
+  a {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 #favorite-delete {
