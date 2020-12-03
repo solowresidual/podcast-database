@@ -74,7 +74,9 @@
 .starrating label {
   visibility: hidden;
 }
-
+.select2 {
+  width: 100% !important;
+}
 .starrating label:after {
   content: "\f005"; /* Star */
   visibility: visible;
@@ -97,3 +99,7 @@
 
 .starrating .form-check > input:hover ~ label
 { color: $peach ;  }
+
+.review-form {
+  font-family: poppins;
+}
