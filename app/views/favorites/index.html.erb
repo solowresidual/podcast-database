@@ -1,12 +1,8 @@
 <div class="review-index-banner">
   <div class="review-text-content">
-    <div class="m-5">
-      <div class="flex-start">
-        <h1>My Favorites</h1>
-        <img src="<%= asset_path("airpods.png") %>" class="airpods">
-      </div>
-      <h6>A bookmark for great episodes you want to listen to, all conveniently linked to your Spotify account </h6>
-    </div>
+     <h1 class="inline">My Favorites</h1>
+     <img src="<%= asset_path("airpods.png") %>" class="airpods">
+    <h6 class="fave-text">A bookmark for great episodes you want to listen to, all <br>conveniently linked to your Spotify account </h6>
   </div>
 </div>
 
@@ -39,12 +35,10 @@
 
                     <%= link_to favorite_path(favorite), method: :delete do %>
                       <i class="fas fa-trash-alt"></i>
-
                   <% end %>
                 </div>
               </div>
             <% end  %>
-
           </div>
         </div>
 
@@ -64,14 +58,12 @@
 
                   <%= link_to favorite_path(favorite), method: :delete do %>
                     <i class="fas fa-trash-alt"></i>
-
                   <% end  %>
                 </div>
               </div>
             <% end  %>
           </div>
         </div>
-
       </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
   <div>
     <div class="review-text-content">
       <h1>My Reviews</h1>
-      <h5>Keep track of all the episodes you've enjoyed <br>and the feedback you've left for the community</h5>
+      <h5 class="reviews-paragraph">Keep track of all the episodes you've enjoyed <br>and the feedback you've left for the community</h5>
     </div>
   </div>
 </div>
@@ -19,8 +19,8 @@
           <p><span><%= sanitize '<i class="fas fa-star stars"></i>' * review.rating if review.rating.present? %></span></p>
           <p><%= review.content %></p>
           <div class="review-buttons">
-            <p class="btn-reviews"><%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %></p>
-            <p class="btn-reviews"><%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: "Are you sure?"}  %></p>
+            <p class="btn-edit-review"><%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %></p>
+            <p class="btn-delete-review"><%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: "Are you sure?"}  %></p>
           </div>
         </div>
       </div>

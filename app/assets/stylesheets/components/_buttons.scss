@@ -1,16 +1,33 @@
-.btn-reviews {
+.btn-delete-review {
   padding: 8px 16px;
   border-radius: 100px;
   font-weight: bold;
-  background: #FF6868;
+  background: $orange;
   transition: background 0.3s ease;
   a {
     color: white;
   }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-edit-review {
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-weight: bold;
+  background: $peach;
+  transition: background 0.3s ease;
+  a {
+    color: white;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .btn-reviews:hover {
-  background: #FF6868;
+  background: $peach;
   opacity: 0.8;
   a {
     color: white;
@@ -91,7 +108,7 @@
 }
 
 .remove-fave-small {
-  background: $orange;
+  background: $peach;
   border: 0;
   border-radius: 50px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);

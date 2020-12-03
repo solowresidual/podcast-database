@@ -49,7 +49,7 @@
 
 .review-index-banner {
   width: 100%;
-  height: 500px;
+  height: 400px;
   background: $peach;
   background-size: cover;
 
@@ -59,12 +59,20 @@
 }
 
 .review-text-content {
-  width: 40%;
   color: $black;
-  margin-left: 200px;
   padding-top: 100px;
+  text-align: center;
 
   p, h5 {
     margin-top: 20px;
   }
 }
+
+.reviews-paragraph {
+  line-height: 1.5;
+}
+
+.inline {
+  display: inline;
+}
+

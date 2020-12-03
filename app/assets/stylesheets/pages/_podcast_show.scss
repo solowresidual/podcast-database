@@ -83,7 +83,20 @@
   }
 }
 
+.lighter-weight {
+  font-weight: 200;
+}
+
 .right-arrow {
   margin-right: 20px;
 }
 
+.episode-name-link {
+  font-weight: 200;
+  color: $black;
+}
+
+.opacity-text {
+  opacity: 0.8;
+  line-height: 1.5;
+}
