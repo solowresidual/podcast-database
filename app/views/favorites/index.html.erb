@@ -2,6 +2,11 @@
   <div class="review-text-content">
     <div class="m-5">
     <h1>Favorites</h1>
+      <div class="flex-start">
+        <h1>My Favorites</h1>
+        <img src="<%= asset_path("airpods.png") %>" class="airpods">
+      </div>
+      <h6>A bookmark for great episodes you want to listen to, all conveniently linked to your Spotify account </h6>
     </div>
   </div>
 </div>
@@ -47,23 +52,25 @@
     <!-- PAST EPISODES TAB -->
 
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-past-episodes-tab">
-          <% @finished.each_with_index do |favorite, index|  %>
-            <div>
-              <div class="items-body-content">
-                <span> <%= index + 1 %>.</span>
-                  <a><%= favorite.episode.podcast.name %></a>
-                  <%= link_to favorite.episode.name, episode_path(favorite.episode) %>
-                  <%= link_to favorite.finished? ? "Add to listen" : "Mark as complete",
-                  favorite_path(favorite),
-                  method: :patch %>
+          <div class="items-body">
+            <% @finished.each_with_index do |favorite, index|  %>
+              <div>
+                <div class="items-body-content">
+                  <span> <%= index + 1 %>.</span>
+                    <a><%= favorite.episode.podcast.name %></a>
+                    <%= link_to favorite.episode.name, episode_path(favorite.episode) %>
+                    <%= link_to favorite.finished? ? "Add to listen" : "Mark as complete",
+                    favorite_path(favorite),
+                    method: :patch %>
 
-                <%= link_to favorite_path(favorite), method: :delete do %>
-                  <i class="fas fa-trash-alt"></i>
+                  <%= link_to favorite_path(favorite), method: :delete do %>
+                    <i class="fas fa-trash-alt"></i>
 
-                <% end  %>
+                  <% end  %>
+                </div>
               </div>
-            </div>
-          <% end  %>
+            <% end  %>
+          </div>
         </div>
 
       </div>
