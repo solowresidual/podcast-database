@@ -68,6 +68,7 @@ $dark-pri: #0B5AA2;
 
 .items-body-content a {
   font-size: 14px;
+  color: $black;
   font-weight: bold;
 }
 
@@ -83,3 +84,25 @@ $dark-pri: #0B5AA2;
   font-family: poppins;
 }
 
+.airpods {
+  height: 80px;
+  width: 80px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.review-text-content h1 {
+  font-size: 60px;
+}
+
+.review-text-content h6 {
+  margin-top: 30px;
+  font-size: 18px;
+}
