@@ -13,7 +13,8 @@
   background-size: cover;
   position: absolute;
   bottom: -124px;
-  left: 557px;
+  left: 575px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 #image-pod {
@@ -39,12 +40,12 @@
   font-size: 18px;
   margin: 0 auto;
   opacity: 0.8;
+  line-height: 1.5;
 }
 
 .pod-show-title {
   font-size: 38px;
-  width: 80%;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .pod-index-container {

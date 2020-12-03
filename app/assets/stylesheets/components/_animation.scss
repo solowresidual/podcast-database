@@ -21,24 +21,30 @@
       &:hover {
         transition-duration: 0.5s;
         transform: scale(1.02);
+        color: #fff;
       }
       padding: 20px;
       width: 300px;
       height: 150px;
       margin: 50px;
-      color: $black;
+      color: #fff;
       border-radius: 16px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      background: linear-gradient(152deg, rgba(237,119,83,1) 7%, rgba(237,146,83,1) 52%, rgba(237,173,83,1) 99%);
+      // background: linear-gradient(152deg, rgba(237,119,83,1) 7%, rgba(237,146,83,1) 52%, rgba(237,173,83,1) 99%);
+      background: $black;
 
       .podcast-name {
-        font-size: 20px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        opacity: 0.8;
+        margin-bottom: -12px;
       }
 
       .episode-name {
-        font-size: 15px;
-        opacity: 0.8;
-
+        font-size: 20px;
+        opacity: 0.9;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 200;
       }
      }
 

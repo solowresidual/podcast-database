@@ -27,10 +27,11 @@
 }
 
 .review-preview {
-  background-color: #FF6868;
+  background-color: #fff;
   color: $black;
   padding: 30px;
   max-width: 200px;
+  border-right: 2px solid #C8C8C8;
 }
 
 .review-info {

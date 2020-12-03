@@ -16,7 +16,7 @@
       <% @latest_episodes.each do |episode| %>
         <a>
           <span class="podcast-name"><%= episode.podcast.name%></span><br/>
-          <span class="episode-name"><%= episode.name%></span>
+          <span class="episode-name"><%= episode.name.truncate(45)%></span>
         </a>
       <% end %>
     </div>
@@ -24,7 +24,7 @@
       <% @latest_episodes.each do |episode| %>
         <a>
           <span class="podcast-name"><%= episode.podcast.name%></span><br/>
-          <span class="episode-name"><%= episode.name%></span>
+          <span class="episode-name"><%= episode.name.truncate(45)%></span>
         </a>
       <% end %>
     </div>
@@ -41,11 +41,11 @@
           <%= cl_image_tag episode.podcast.photo.key, alt: "alttext", class: "preview-image" %>
           <p class="mt-3"><%= episode.podcast.name%></p>
           <p><%= episode.podcast.category %></p>
-          <%= link_to "All Episodes", podcast_path(episode.podcast) %>
+          <%= link_to "All Episodes", podcast_path(episode.podcast), class: "black-link" %>
           <a href="#"><i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="episode-info" id="<%= episode.id %>">
-          <span><%= '⭐️' * episode.average_rating if episode.average_rating.present? %></span>
+          <span><%= sanitize '<i class="fas fa-star stars mb-3"></i>' * episode.average_rating if episode.average_rating.present? %></span>
           <h5 class="mb-3"><%= link_to episode.name.truncate(105) , episode, class: "ep-name-link" %></h5>
           <p><%= episode.description.truncate(240)%></p>
 

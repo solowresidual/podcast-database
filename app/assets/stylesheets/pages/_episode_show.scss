@@ -3,7 +3,6 @@
 .ep-show-banner {
   width: 100%;
   height: 420px;
-  // background-image: linear-gradient(180deg, $light-orange, $light-gray);
   background: $light-orange;
 }
 
@@ -28,8 +27,8 @@
   width: 250px;
   height: 250px;
   background-size: cover;
-  border-radius: 50%;
   margin: 40px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .share-play-box {
