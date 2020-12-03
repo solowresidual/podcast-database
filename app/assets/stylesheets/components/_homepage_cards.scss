@@ -25,31 +25,35 @@
   color: $black;
   padding: 30px;
   max-width: 200px;
-  border-right: 2px solid $black;
+  border-right: 2px solid #C8C8C8;
 }
 
 .podcast-preview a {
   color: $black;
   display: inline-block;
   font-size: 12px;
-  opacity: 0.6;
   margin-top: 30px;
   text-decoration: none;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .preview-image {
   height: 120px;
   width: 120px;
-  border-radius: 50%;
   background-size: cover;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .episode-info {
   padding: 30px;
   position: relative;
   width: 100%;
+  p {
+    opacity: 0.8;
+  }
 }
-
 
 .popular-cards-container {
   margin: 50px;

@@ -1,1 +1,17 @@
-// Specific CSS for your home-page
+.main-heading {
+  font-size: 52px;
+}
+
+
+.white-icon {
+  color: #fff;
+}
+
+.user-links {
+  color: $peach;
+  &:hover {
+    text-decoration: none;
+    color: $peach;
+    opacity: 0.7;
+  }
+}

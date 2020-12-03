@@ -11,13 +11,11 @@
   }
 }
 
-
 .banner-info {
   position: relative;
   top: 180px;
   right: 45px;
 }
-
 
 // podcast index banner
 
@@ -26,15 +24,14 @@
   height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 90%;
   background-color: #F8A33E;
   padding-top: 40px;
 }
 
 .index-text-content {
-  // margin-top: 100px;
   width: 40%;
   color: black;
+  opacity: 0.9;
   margin-right: auto;
   margin-left: auto;
   text-align: center;

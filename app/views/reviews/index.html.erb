@@ -10,11 +10,12 @@
     <% @reviews.each do |review| %>
       <div class="podcast">
         <div class="review-preview">
-          <h5><%= review.episode.podcast.name %></h5>
+          <h5 class="mb-5"><%= review.episode.podcast.name %></h5>
+          <%= cl_image_tag review.episode.podcast.photo.key, alt: "alttext", class: "preview-image" %>
         </div>
         <div class="review-info">
           <h5><%= link_to review.episode.name, episode_path(review.episode), class: "ep-name-link" %></h5>
-          <p><span><%= '⭐️' * review.rating if review.rating.present? %></span></p>
+          <p><span><%= sanitize '<i class="fas fa-star stars"></i>' * review.rating if review.rating.present? %></span></p>
           <p><%= review.content %></p>
           <div class="review-buttons">
             <p class="btn-reviews"><%= link_to 'Edit Review', edit_episode_review_path(review.episode, review) %></p>

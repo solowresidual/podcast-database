@@ -40,16 +40,12 @@
   color: #ea2c62;
 }
 
-.stars {
-  color: $orange;
-}
-
 .remove-fave {
   background: $orange;
   border: 0;
   border-radius: 50px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  color: $black;
+  color: #fff;
   font-size: 16px;
   padding: 12px 25px;
   position: absolute;
@@ -59,7 +55,7 @@
 
   &:hover {
     text-decoration: none;
-    color: black;
+    color: #fff;
     opacity: 0.8;
   }
 }
@@ -69,7 +65,7 @@
   border: 0;
   border-radius: 50px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  color: $black;
+  color: #fff;
   font-size: 16px;
   padding: 12px 25px;
   position: absolute;
@@ -79,4 +75,11 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+
+.spotify-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
 }
