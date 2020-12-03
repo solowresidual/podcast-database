@@ -18,7 +18,7 @@
       <div class="pod-index-card">
         <div class="podcast-list">
           <div class="flex-btwn">
-            <div>
+            <div class="ep-name-link">
               <span><%= index + 1 %>. </span><%= episode.name %>
             </div>
             <% if episode.average_rating %>
@@ -30,6 +30,15 @@
                 <%= sanitize '<i class="fas fa-star stars"></i>' * 0 %>
               </div>
             <% end %>
+            <div>
+            <% if user_signed_in? %>
+              <% if current_user.favorites.where(episode: episode).empty? %>
+                <%= link_to "Add to Favorites", episode_favorites_path(episode), method: :post, remote: true, class: "add-to-fave-small" %>
+                <% else %>
+                <%= link_to "Remove from Favorites", favorite_path(episode.favorite.ids[0]), method: :delete, remote: true, class: "remove-fave-small" %>
+              <% end %>
+            <% end %>
+            </div>
           </div>
           <%= episode.description.truncate(85) %>
         </div>
