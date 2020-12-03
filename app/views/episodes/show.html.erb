@@ -56,15 +56,15 @@
     <div class="content-col-right">
       <div class="share-play-box">
         <div class="buttons-container">
+          <% if user_signed_in? %>
           <div class="interact-buttons play-button text-center mt-2">
-            <% if user_signed_in? %>
               <% if current_user.favorites.where(episode: @episode).empty? %>
                 <%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, remote: true %>
                 <% else %>
                 <%= link_to "Remove from Favorites", favorite_path(@episode.favorite.ids[0]), method: :delete, remote: true %>
               <% end %>
-            <% end %>
           </div>
+          <% end %>
         </div>
         <div class="icons-container">
           <%= render 'shared/share_buttons' %>
@@ -73,16 +73,19 @@
 
       <div class="show-other-content">
         <div class="leaving-reviews">
+        <% if user_signed_in? %>
 
-          <% if user_signed_in? %>
             <% if current_user.reviews.where(episode: @episode).empty?  %>
 
               <%= render partial: 'review_form', locals: {episode: @episode, review: @review}  %>
             <% else %>
               <%= link_to "Edit your review", reviews_path, class: "btn-black mr-3"  %>
             <% end %>
-          <% end %>
+        <% else %>
+          <p>Sign in to leave a review.</p>
+        <% end %>
         </div>
+
       </div>
 
     </div>
