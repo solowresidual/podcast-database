@@ -66,21 +66,25 @@ class FavoritesController < ApplicationController
 
   def remove_spotify_episode(episode)
     if current_user.provider == 'spotify'
-      RSpotify.authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
-      spotify_user = RSpotify::User.new(current_user.spotify_hash)
-      url = "https://api.spotify.com/v1/playlists/#{current_user.spotify_playlist_id}/tracks"
+      # RSpotify.authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
+      # spotify_user = RSpotify::User.new(current_user.spotify_hash)
+      # url = "https://api.spotify.com/v1/playlists/#{current_user.spotify_playlist_id}/tracks"
 
-      tracks = [{ "uri": "spotify:episode:#{episode.spotify_id}" }]
+      # tracks = [{ "uri": "spotify:episode:#{episode.spotify_id}" }]
 
-      params = {
-        method: :delete,
-        url: URI.parse(url).to_s,
-        headers: RSpotify::User.send(:oauth_header, spotify_user.id),
-        payload: { tracks: tracks }
-      }
+      # params = {
+      #   method: :delete,
+      #   url: URI.parse(url).to_s,
+      #   headers: RSpotify::User.send(:oauth_header, spotify_user.id),
+      #   payload: { tracks: tracks }
+      # }
 
-      params[:payload] = params[:payload].to_json
-      RestClient::Request.execute(params)
+      # params[:payload] = params[:payload].to_json
+      # RestClient::Request.execute(params)
+      RSpotify::User.new(current_user.spotify_hash)
+      all_tracks = find_spotify_playlist.tracks
+      track = all_tracks.select { |item| item.id == episode.spotify_id }
+      find_spotify_playlist.remove_tracks!(track)
     end
   end
 end
