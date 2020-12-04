@@ -1,14 +1,14 @@
+
 <div class="review-index-banner">
   <div class="review-text-content">
      <h1 class="inline">My Favorites</h1>
      <img src="<%= asset_path("airpods.png") %>" class="airpods">
     <h6 class="fave-text">A bookmark for great episodes you want to listen to, all <br>conveniently linked to your Spotify account </h6>
+
   </div>
 </div>
 
-<hr>
-  <div class="container">
-    <div class="items">
+  <div class="favorite-container">
       <div class="items-head">
       <nav>
         <div class="nav nav-tabs" id="fav-tabs" role="tablist">
@@ -21,51 +21,71 @@
 
   <!-- TO LISTEN TAB -->
 
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-to-listen-tab">
-          <div class="items-body">
-            <% @favorites.each_with_index do |favorite, index|  %>
-              <div>
-                <div class="items-body-content">
-                  <span><%= index + 1 %>.</span>
-                    <a><%= favorite.episode.podcast.name %></a>
-                    <%= link_to favorite.episode.name, episode_path(favorite.episode) %>
-                    <%= link_to favorite.finished? ? "Add to listen" : "Mark as complete",
-                      favorite_path(favorite),
-                      method: :patch %>
 
-                    <%= link_to favorite_path(favorite), method: :delete do %>
-                      <i class="fas fa-trash-alt"></i>
-                  <% end %>
-                </div>
-              </div>
-            <% end  %>
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-to-listen-tab">
+            <div class="items-body">
+              <% @favorites.each_with_index do |favorite, index|  %>
+
+                  <div class="favorite-index-card">
+                    <div class="favorite-list">
+                      <div class="favorite-flex">
+                        <div class="favorite-details">
+                          <span><%= index + 1 %>.</span>
+                          <a><%= favorite.episode.podcast.name %></a>
+                        </div>
+                          <%= link_to favorite.episode.name, episode_path(favorite.episode), class: "favorite-episode-name" %>
+                          <%= link_to favorite.finished? ? "Add to listen" : "Mark as complete",
+                            favorite_path(favorite),
+                            method: :patch %>
+
+                          <%= link_to favorite_path(favorite), method: :delete do %>
+                            <i class="fas fa-trash-alt"></i>
+
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+
+              <% end  %>
+
+            </div>
           </div>
-        </div>
 
-    <!-- PAST EPISODES TAB -->
 
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-past-episodes-tab">
-          <div class="items-body">
-            <% @finished.each_with_index do |favorite, index|  %>
-              <div>
-                <div class="items-body-content">
-                  <span> <%= index + 1 %>.</span>
-                    <a><%= favorite.episode.podcast.name %></a>
-                    <%= link_to favorite.episode.name, episode_path(favorite.episode) %>
-                    <%= link_to favorite.finished? ? "Add to listen" : "Mark as complete",
-                    favorite_path(favorite),
-                    method: :patch %>
 
-                  <%= link_to favorite_path(favorite), method: :delete do %>
-                    <i class="fas fa-trash-alt"></i>
-                  <% end  %>
-                </div>
-              </div>
-            <% end  %>
+
+      <!-- PAST EPISODES TAB -->
+
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-past-episodes-tab">
+            <div class="items-body">
+              <% @finished.each_with_index do |favorite, index|  %>
+
+                  <div class="favorite-index-card" >
+                    <div class="favorite-list">
+                      <div class="favorite-flex">
+                        <div class="favorite-details">
+                          <span> <%= index + 1 %>.</span>
+                          <a><%= favorite.episode.podcast.name %></a>
+                        </div>
+                          <%= link_to favorite.episode.name, episode_path(favorite.episode), class: "favorite-episode-name" %>
+                          <%= link_to favorite.finished? ? "Add to listen" : "Mark as complete",
+                          favorite_path(favorite),
+                          method: :patch %>
+
+                          <%= link_to favorite_path(favorite), method: :delete do %>
+                          <i class="fas fa-trash-alt"></i>
+
+                        <% end  %>
+                      </div>
+                    </div>
+                  </div>
+
+              <% end  %>
+            </div>
           </div>
+
+
         </div>
       </div>
-      </div>
-    </div>
   </div>
 </div>
