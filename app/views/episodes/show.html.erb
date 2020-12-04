@@ -73,11 +73,11 @@
       <div class="share-play-box">
         <div class="buttons-container">
           <% if user_signed_in? %>
-          <div class="interact-buttons play-button text-center mt-2">
+          <div class="interact-buttons text-center mt-2">
               <% if current_user.favorites.where(episode: @episode).empty? %>
-                <%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, remote: true %>
+                <%= link_to "Add to Favorites", episode_favorites_path(@episode), method: :post, remote: true, class: "play-button play-add" %>
                 <% else %>
-                <%= link_to "Remove from Favorites", favorite_path(@episode.favorite.ids[0]), method: :delete, remote: true %>
+                <%= link_to "Remove from Favorites", favorite_path(@episode.favorite.ids[0]), method: :delete, remote: true, class: "play-button play-remove" %>
               <% end %>
           </div>
           <% end %>

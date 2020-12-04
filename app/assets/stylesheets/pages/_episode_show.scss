@@ -41,6 +41,36 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
+.play-button {
+  background: $peach;
+  color: $white;
+  margin: auto;
+  padding: 15px 0;
+  border-radius: 7px;
+  display: block;
+  width: 100%;
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.play-add {
+  background: $peach;
+}
+
+.play-remove {
+  background: $orange;
+}
+
+.play-button a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+
+
 .ep-show-img-container {
   display: flex;
   padding-top: 30px;
@@ -82,20 +112,6 @@
   border-radius: 7px;
 }
 
-.play-button {
-  background: $peach;
-  color: $white;
-  margin: auto;
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-
-.play-button a {
-  text-decoration: none;
-  color: #FFF;
-}
 
 .black-border-button {
   border: 1px solid $black;
