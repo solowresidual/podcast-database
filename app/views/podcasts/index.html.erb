@@ -19,8 +19,8 @@
         <div class="card-product">
           <%= cl_image_tag podcast.photo.key, alt: "alttext", class: "border-img" %>
           <div class="podcast-text">
-            <h5><%= link_to podcast.name, podcast, class: "pod-name" %></h5>
-            <p> <%= podcast.description.truncate(120) %> </p>
+            <h5><%= link_to podcast.name, podcast, class: "pod-name lighter-weight" %></h5>
+            <p class="opacity-text"> <%= podcast.description.truncate(120) %> </p>
             <p> <small> <%= podcast.category %></small> </p>
           </div>
         </div>

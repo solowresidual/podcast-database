@@ -47,7 +47,7 @@
         <div class="episode-info" id="<%= episode.id %>">
           <span><%= sanitize '<i class="fas fa-star stars mb-3"></i>' * episode.average_rating if episode.average_rating.present? %></span>
           <h5 class="mb-3"><%= link_to episode.name.truncate(105) , episode, class: "ep-name-link" %></h5>
-          <p><%= episode.description.truncate(240)%></p>
+          <p><%= episode.description.truncate(210)%></p>
           <% if user_signed_in? %>
             <% if current_user.favorites.where(episode: episode).empty? %>
               <button class="add-to-fave favorites">Add to Favorites</button>

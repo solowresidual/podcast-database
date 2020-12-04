@@ -18,7 +18,7 @@
       <div class="pod-index-card">
         <div class="podcast-list">
           <div class="flex-btwn">
-            <div class="ep-name-link">
+            <div class="episode-name-link">
               <span><%= index + 1 %>. </span><%= episode.name %>
             </div>
             <% if episode.average_rating %>
@@ -40,7 +40,7 @@
             <% end %>
             </div>
           </div>
-          <%= episode.description.truncate(235) %>
+          <p class="opacity-text"><%= episode.description.truncate(235) %></p>
         </div>
       </div>
     <% end %>
